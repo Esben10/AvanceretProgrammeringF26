@@ -5,47 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a9a5430-e83d-4879-8d5e-c9086862fc55" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/designpatterns/AdapterPattern.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/designpatterns/BuilderPattern.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/designpatterns/CommandPattern.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/designpatterns/CompositePattern.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/designpatterns/DecoratorPattern.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/designpatterns/FactoryPattern.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/designpatterns/ObserverPattern.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/designpatterns/ProxyPattern.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/designpatterns/SingletonPattern.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/designpatterns/StrategyPattern.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/designpatterns/designpatterns_exercises.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpatterns/builder/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpatterns/command/LightOffCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpatterns/command/RemoteControl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpatterns/composite/Enemy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpatterns/composite/EnemyGroup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpatterns/composite/GameObject.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpatterns/exercises/command/AcceptCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpatterns/exercises/command/Button.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpatterns/exercises/command/CardReader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpatterns/exercises/command/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpatterns/exercises/command/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpatterns/exercises/composite/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpatterns/exercises/composite/Task.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpatterns/exercises/composite/TaskGroup.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpatterns/exercises/decorator/FileTextWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpatterns/exercises/decorator/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpatterns/exercises/decorator/TextWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/designpatterns/exercises/decorator/TimestampDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/designpatterns/Cases.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/designpatterns/Cheat sheet til cases.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/designpatterns/Guide.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/designpatterns/Kategorisering.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/designpatterns/Oversigt.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/designpatterns_exercises.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/img_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/searchandsort_exercises.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/searchandsort/searchandsort_exercises.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/designpatterns/builder/Pizza.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/designpatterns/command/Light.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/designpatterns/command/Light.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/designpatterns/composite/Component.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/designpatterns/composite/Composite.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/designpatterns/composite/Leaf.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/designpatterns/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/designpatterns/main/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/designpatterns/proxy/AuthProxy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/designpatterns/proxy/ServiceProxy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,28 +42,28 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.BigOExamples.executor": "Run",
-    "Application.HashSetMutationDemo.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.TreeSetMutationDemo.executor": "Run",
-    "Application.designpatterns.exercises.Main.executor": "Run",
-    "Application.designpatterns.main.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/kong/OneDrive - EFIF/Dokumenter/Valgfag/AvanceretProgrammering/docs/designpatterns",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/kong/OneDrive - EFIF/Dokumenter/Valgfag/AvanceretProgrammering/src/main/java/org/example/Main.java",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.BigOExamples.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HashSetMutationDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TreeSetMutationDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.designpatterns.exercises.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.designpatterns.main.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kong/OneDrive - EFIF/Dokumenter/Valgfag/AvanceretProgrammering/docs/designpatterns&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/kong/OneDrive - EFIF/Dokumenter/Valgfag/AvanceretProgrammering/src/main/java/org/example/Main.java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\kong\OneDrive - EFIF\Dokumenter\Valgfag\AvanceretProgrammering\docs\designpatterns" />
@@ -190,7 +156,8 @@
       <workItem from="1743492145862" duration="9670000" />
       <workItem from="1743680793735" duration="2741000" />
       <workItem from="1743748425125" duration="3940000" />
-      <workItem from="1743918239350" duration="5828000" />
+      <workItem from="1743918239350" duration="6785000" />
+      <workItem from="1744033619130" duration="1043000" />
     </task>
     <servers />
   </component>
