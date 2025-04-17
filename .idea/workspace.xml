@@ -5,13 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a9a5430-e83d-4879-8d5e-c9086862fc55" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/designpatterns/Cases.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/designpatterns/Cheat sheet til cases.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/designpatterns/Guide.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/designpatterns/Kategorisering.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/designpatterns/Oversigt.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/concurrency/concurrency_exercises.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/concurrency/preparation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/concurrency/banckaccountdeadlocksolution/BankAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/concurrency/banckaccountdeadlocksolution/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/concurrency/banckaccountdeadlocksolution/SafeTransfer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/concurrency/banckaccountdeadlocksolution/TransferRunnable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/concurrency/bankaccount/BankAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/concurrency/bankaccount/BankRunnable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/concurrency/bankaccount/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/concurrency/bankaccountdeadlock/BankAccount.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/concurrency/bankaccountdeadlock/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/concurrency/bankaccountdeadlock/TransferRunnable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/concurrency/deadlockexample/A.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/concurrency/synchronization/Logger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/concurrency/synchronization/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/concurrency/synchronization/SmartLogger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/concurrency/threadandrunnable/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/concurrency/threadandrunnable/MyRunnable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/concurrency/threadandrunnable/MyThread.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/designpatterns/Oversigt.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/designpatterns/Oversigt.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/designpatterns/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/designpatterns/main/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,6 +63,9 @@
     &quot;Application.HashSetMutationDemo.executor&quot;: &quot;Run&quot;,
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.TreeSetMutationDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.concurrency.bankaccount.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.concurrency.synchronization.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.concurrency.threadandrunnable.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.designpatterns.exercises.Main.executor&quot;: &quot;Run&quot;,
     &quot;Application.designpatterns.main.Main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
@@ -77,14 +95,17 @@
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="concurrency.deadlocksolution" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.designpatterns.main.Main">
-    <configuration name="HashSetMutationDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="searchandsort.HashSetMutationDemo" />
+  <component name="RunManager" selected="Application.concurrency.synchronization.Main">
+    <configuration name="concurrency.bankaccount.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="concurrency.bankaccount.Main" />
       <module name="AvanceretProgrammering" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="searchandsort.*" />
+          <option name="PATTERN" value="concurrency.bankaccount.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -92,9 +113,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+    <configuration name="concurrency.synchronization.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="concurrency.synchronization.Main" />
       <module name="AvanceretProgrammering" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="concurrency.synchronization.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="concurrency.threadandrunnable.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="concurrency.threadandrunnable.Main" />
+      <module name="AvanceretProgrammering" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="concurrency.threadandrunnable.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -127,10 +167,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.concurrency.synchronization.Main" />
+        <item itemvalue="Application.concurrency.bankaccount.Main" />
+        <item itemvalue="Application.concurrency.threadandrunnable.Main" />
         <item itemvalue="Application.designpatterns.main.Main" />
         <item itemvalue="Application.designpatterns.exercises.decorator.Main" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.HashSetMutationDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -158,6 +199,10 @@
       <workItem from="1743748425125" duration="3940000" />
       <workItem from="1743918239350" duration="6785000" />
       <workItem from="1744033619130" duration="1043000" />
+      <workItem from="1744096555778" duration="10151000" />
+      <workItem from="1744545248465" duration="1547000" />
+      <workItem from="1744615345241" duration="4825000" />
+      <workItem from="1744903085367" duration="106000" />
     </task>
     <servers />
   </component>

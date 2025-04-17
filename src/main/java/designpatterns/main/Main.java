@@ -24,10 +24,15 @@ public class Main {
         dog.speak();
 
         // Builder
-        User user = new User.Builder("Anna", "anna@example.com")
+      User user = new User.Builder("Anna", "anna@example.com")
                 .address("Fyrrevej 7")
                 .newsletter(true)
                 .build();
+
+      User.Builder us = new User.Builder("Signe", "kong@cph");
+      us = us.address("gladsaxevej");
+      us = us.newsletter(true);
+      User signe = us.build();
 
         System.out.println("Bruger: " + user);
 
