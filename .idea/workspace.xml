@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a9a5430-e83d-4879-8d5e-c9086862fc55" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/algorithms/algorithms_exercises.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/algorithms/preparation.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/circularlinkedlist/ListFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/circularlinkedlist/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/circularlinkedlist/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/circularlinkedlistsolution/ListFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/circularlinkedlistsolution/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/circularlinkedlistsolution/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/floydexample/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/floydexample/TraversingArrays.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/reversedlinkedlist/ListFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/reversedlinkedlist/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/reversedlinkedlist/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/reversedlinkedlistsolution/ListFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/reversedlinkedlistsolution/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/reversedlinkedlistsolution/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/algorithms/preparation.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/algorithms/preparation.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,7 +199,7 @@
       <workItem from="1745253073506" duration="2085000" />
       <workItem from="1745491498149" duration="4297000" />
       <workItem from="1745498186602" duration="4066000" />
-      <workItem from="1745553668842" duration="4678000" />
+      <workItem from="1745553668842" duration="4951000" />
     </task>
     <servers />
   </component>
