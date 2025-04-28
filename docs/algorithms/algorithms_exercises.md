@@ -112,4 +112,4 @@ Opgaven er nu
 - Hent inspiration i `graphsearch.SearchStrategies`. Du skal ikke kopiere koden fra `graphsearch` pakken,
 men forstå hvordan der traverseres gennem grafen og gøre det samme i dine træer. 
 
-Bonusspørgsmål: hvordan udvider vi til at detektere cyklusser? Se klassen `graphsearchcycles.SearchStrategies`.
+Bonusspørgsmål: hvordan udvider vi til at detektere cyklusser? Se klassen `graphsearchcycles.CycleDetector`.

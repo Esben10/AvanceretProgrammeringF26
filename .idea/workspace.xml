@@ -5,13 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a9a5430-e83d-4879-8d5e-c9086862fc55" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/graphsearchcycles/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/graphsearchcycles/SearchStrategies.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/algorithms/algorithms_exercises.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/algorithms/algorithms_exercises.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/graphsearch/SearchStrategies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/graphsearch/SearchStrategies.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/treesearch/tree/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/treesearch/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/treesearch/tree/SearchStrategies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/treesearch/SearchStrategies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/graphsearchcycles/SearchStrategies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/graphsearchcycles/CycleDetector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +204,7 @@
       <workItem from="1745498186602" duration="4066000" />
       <workItem from="1745553668842" duration="11950000" />
       <workItem from="1745763419115" duration="3770000" />
-      <workItem from="1745825850885" duration="9391000" />
+      <workItem from="1745825850885" duration="10146000" />
     </task>
     <servers />
   </component>

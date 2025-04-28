@@ -2,7 +2,7 @@ package algorithms.graphsearchcycles;
 
 import java.util.*;
 
-public class SearchStrategies {
+public class CycleDetector {
 
     public static void main(String[] args) {
         // Vi bygger en simpel graf:
