@@ -4,20 +4,23 @@ public class Main {
 
     public static void main(String[] args) {
         Node list = ListFactory.buildList(1, 2, 3, 4, 5);
-        if(!isCircular(list))
+        if(!hasCircle(list))
             System.out.println(list);
 
         Node circularlist = ListFactory.buildListWithCycle();
-        if(!isCircular(circularlist))
+        if(!hasCircle(circularlist))
             System.out.println(circularlist);
     }
 
-    private static boolean isCircular(Node head){
+    private static boolean hasCircle(Node head){
         Node slow = head;
         Node fast = head;
 
-       // while (fast != null && )
-
+        while (fast !=  null && fast.next != null){
+            slow = slow.next;
+            fast = fast.next.next;
+            if(slow == fast) return true;
+        }
         return false;
     }
 }

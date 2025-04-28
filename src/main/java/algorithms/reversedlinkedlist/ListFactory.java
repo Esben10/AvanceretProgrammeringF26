@@ -2,7 +2,7 @@ package algorithms.reversedlinkedlist;
 
 public class ListFactory {
 
-    // Helper: Build a linked list from array of ints
+    // Bygger en liste af et antal int-værdier
     public static Node buildList(int... values) {
         if (values.length == 0) return null;
         Node head = new Node(values[0]);

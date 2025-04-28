@@ -4,28 +4,36 @@ public class TraversingArrays {
 
     public static void naiveWalk(int[] array) {
         int current = array[0];
-        while (current != -1 && current != array.length) {
-            System.out.print(current + " → ");
+        while (current < array.length) {
+            System.out.print(array[current] + " → ");
             current = array[current];
         }
         System.out.println("null");
     }
 
+
     public static boolean hasCycle(int[] array) {
         int slow = 0;
         int fast = 0;
 
-        while (fast < array.length &&
-                        array[fast] < array.length) {
-            slow = array[slow];                    // ét skridt
-            fast = array[array[fast]];             // to skridt
+        while (true) {
+            // Første hop for slow
+            if (slow < 0 || slow >= array.length) return false;
+            slow = array[slow];
 
-            if (slow == fast) {
-                return true;
-            }
+            // Første hop for fast
+            if (fast < 0 || fast >= array.length) return false;
+            fast = array[fast];
+
+            // Andet hop for fast
+            if (fast < 0 || fast >= array.length) return false;
+            fast = array[fast];
+
+            // Check om de mødes
+            if (slow == fast) return true;
         }
 
-        return false; // hvis vi rammer enden uden at mødes
+
     }
 
 

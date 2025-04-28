@@ -2,7 +2,7 @@ package algorithms.circularlinkedlist;
 
 public class ListFactory {
 
-    // Helper: Build a linked list from array of ints
+    // Bygger en liste af int-værdier
     public static Node buildList(int... values) {
         if (values.length == 0) return null;
         Node head = new Node(values[0]);
@@ -25,7 +25,7 @@ public class ListFactory {
         n2.next = n3;
         n3.next = n4;
         n4.next = n5;
-        n5.next = n2; // Creates the cycle
+        n5.next = n2; // Laver cyklus
         return n1;
     }
 
