@@ -1,4 +1,4 @@
-package algorithms.treesearch.tree;
+package algorithms.treesearch;
 
 
 
@@ -27,4 +27,6 @@ public class Node {
         children.add(newChild);
         return newChild;
     }
+
+
 }

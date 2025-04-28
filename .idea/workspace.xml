@@ -5,23 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a9a5430-e83d-4879-8d5e-c9086862fc55" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/graphsearch/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/graphsearch/SearchStrategies.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/treesearch/tree/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/treesearch/tree/SearchStrategies.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/graphsearchcycles/Node.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/algorithms/graphsearchcycles/SearchStrategies.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/algorithms/algorithms_exercises.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/algorithms/algorithms_exercises.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/circularlinkedlist/ListFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/circularlinkedlist/ListFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/circularlinkedlist/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/circularlinkedlist/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/circularlinkedlist/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/circularlinkedlist/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/circularlinkedlistsolution/ListFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/circularlinkedlistsolution/ListFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/circularlinkedlistsolution/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/circularlinkedlistsolution/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/floydexample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/floydexample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/floydexample/TraversingArrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/floydexample/TraversingArrays.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/reversedlinkedlist/ListFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/reversedlinkedlist/ListFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/reversedlinkedlist/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/reversedlinkedlist/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/reversedlinkedlistsolution/ListFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/reversedlinkedlistsolution/ListFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/reversedlinkedlistsolution/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/reversedlinkedlistsolution/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/graphsearch/SearchStrategies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/graphsearch/SearchStrategies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/treesearch/tree/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/treesearch/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/treesearch/tree/SearchStrategies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/treesearch/SearchStrategies.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,39 +42,40 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.BigOExamples.executor&quot;: &quot;Run&quot;,
-    &quot;Application.HashSetMutationDemo.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TreeSetMutationDemo.executor&quot;: &quot;Run&quot;,
-    &quot;Application.algorithms.circularlinkedlistsolution.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.algorithms.floydexample.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.algorithms.reversedlinkedlistsolution.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.concurrency.bankaccount.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.concurrency.executorsolution.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.concurrency.observersolution.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.concurrency.observersolutionwiththreads.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.concurrency.synchronization.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.concurrency.threadandrunnable.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.designpatterns.exercises.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.designpatterns.main.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/kong/OneDrive - EFIF/Dokumenter/Valgfag/AvanceretProgrammering/src/main/java/algorithms/circularlistsolution&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/kong/OneDrive - EFIF/Dokumenter/Valgfag/AvanceretProgrammering/src/main/java/org/example/Main.java&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.BigOExamples.executor": "Run",
+    "Application.HashSetMutationDemo.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.TreeSetMutationDemo.executor": "Run",
+    "Application.algorithms.circularlinkedlistsolution.Main.executor": "Run",
+    "Application.algorithms.floydexample.Main.executor": "Run",
+    "Application.algorithms.reversedlinkedlistsolution.Main.executor": "Run",
+    "Application.concurrency.bankaccount.Main.executor": "Run",
+    "Application.concurrency.executorsolution.Main.executor": "Run",
+    "Application.concurrency.observersolution.Main.executor": "Run",
+    "Application.concurrency.observersolutionwiththreads.Main.executor": "Run",
+    "Application.concurrency.synchronization.Main.executor": "Run",
+    "Application.concurrency.threadandrunnable.Main.executor": "Run",
+    "Application.designpatterns.exercises.Main.executor": "Run",
+    "Application.designpatterns.main.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/kong/OneDrive - EFIF/Dokumenter/Valgfag/AvanceretProgrammering/src/main/java/algorithms/graphsearchcycles",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/kong/OneDrive - EFIF/Dokumenter/Valgfag/AvanceretProgrammering/src/main/java/org/example/Main.java",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\kong\OneDrive - EFIF\Dokumenter\Valgfag\AvanceretProgrammering\src\main\java\algorithms\graphsearchcycles" />
       <recent name="C:\Users\kong\OneDrive - EFIF\Dokumenter\Valgfag\AvanceretProgrammering\src\main\java\algorithms\circularlistsolution" />
       <recent name="C:\Users\kong\OneDrive - EFIF\Dokumenter\Valgfag\AvanceretProgrammering\src\main\java\concurrency\observersolutionwiththreads" />
       <recent name="C:\Users\kong\OneDrive - EFIF\Dokumenter\Valgfag\AvanceretProgrammering\docs\designpatterns" />
@@ -217,7 +208,7 @@
       <workItem from="1745498186602" duration="4066000" />
       <workItem from="1745553668842" duration="11950000" />
       <workItem from="1745763419115" duration="3770000" />
-      <workItem from="1745825850885" duration="3763000" />
+      <workItem from="1745825850885" duration="9391000" />
     </task>
     <servers />
   </component>

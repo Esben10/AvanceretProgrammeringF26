@@ -37,13 +37,10 @@ public class SearchStrategies {
 
 
     public static Node searchBFS(String targetName, Node start) {
-        Set<Node> visited = new HashSet<>();
         Queue<Node> queue = new ArrayDeque<>();
         queue.add(start);
-        visited.add(start);
 
         while (!queue.isEmpty()) {
-
             System.out.print("Current queue: ");
             for (Node item : queue) {
                 System.out.print(item.getName() + " ");
@@ -55,24 +52,15 @@ public class SearchStrategies {
             if (currentNode.getName().equals(targetName)) {
                 System.out.println("Finished searching!");
                 return currentNode;
-            } else {
-                for (Node neighbor : currentNode.getNeighbors()) {
-                    if (!visited.contains(neighbor)) {
-                        queue.add(neighbor);
-                        visited.add(neighbor);
-                    }
-                }
             }
+            else queue.addAll(currentNode.getNeighbors());
         }
-
         return null;
     }
 
     public static Node searchDFS(String targetName, Node start) {
-        Set<Node> visited = new HashSet<>();
         Deque<Node> stack = new ArrayDeque<>();
         stack.push(start);
-        visited.add(start);
 
         while (!stack.isEmpty()) {
 
@@ -89,12 +77,10 @@ public class SearchStrategies {
                 return currentNode;
             } else {
                 for (Node neighbor : currentNode.getNeighbors()) {
-                    if (!visited.contains(neighbor)) {
-                        stack.push(neighbor);
-                        visited.add(neighbor);
-                    }
+                    stack.push(neighbor);
                 }
             }
+
         }
 
         return null;

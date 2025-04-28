@@ -78,4 +78,38 @@ en boolean, der angiver om listen er cycklisk.
 
 Bonusopgave: Kan du forudse hvad `floydexample.TraversingArrays` vil returnere med inputtet ` int[] test = {2, 0, 1}` og hvorfor?
 
-## 5. BFS og DFS
+## 5. BFS
+
+Kig på klassen `graphsearch.SearchStrategies`. I klassen er metoden `searchBFS(..)`. 
+
+Din opgave er
+
+- Gå metodens kode igennem linje for linje og forklar for din sidemakker hvad den gør. 
+- Tegn evt indholdet af køen iteration for hver iteration. 
+- Overvej hvad det betyder, at vi bruger en `Queue` (hint: det er en FIFO struktur).
+
+
+## 6. DFS
+
+Kig på klassen `graphsearch.SearchStrategies`. I klassen er metoden `searchDFS(..)`.
+
+Din opgave er
+
+- Gå metodens kode igennem linje for linje og forklar for din sidemakker hvad den gør.
+- Tegn evt indholdet af stakken iteration for hver iteration.
+- Overvej hvad det betyder, at vi bruger et `Deque` (hint: det er en LIFO struktur).
+
+Bonusspørgsmål: Hvordan kan vi bruge `ArrayDeque` som både stak og kø? 
+
+## 7. Implementer din egen BFS og DFS
+
+Kig på klasserne `treesearch.Node` og `treesearch.SearchStrategies`. Klassen `Node` repræsenterer en node i et træ, 
+som kan have andre noder som børn. 
+
+Opgaven er nu
+
+- Implementer metoderne `searchBFS(..)` og `searchDFS(..)`
+- Hent inspiration i `graphsearch.SearchStrategies`. Du skal ikke kopiere koden fra `graphsearch` pakken,
+men forstå hvordan der traverseres gennem grafen og gøre det samme i dine træer. 
+
+Bonusspørgsmål: hvordan udvider vi til at detektere cyklusser? Se klassen `graphsearchcycles.SearchStrategies`.
