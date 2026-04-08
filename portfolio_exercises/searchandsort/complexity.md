@@ -13,7 +13,7 @@
 ## 2. Datastrukturer og kompleksitet i praksis
 
 I Tech uden Tech-øvelsen fandt vi ud af at forskellige datastrukturer har forskellig kompleksitet for de samme operationer.
-Nu skal du kode eksempler der bekræfter det — og måske overrasker dig.
+Nu skal du kode eksempler der bekræfter det.
 
 ### ArrayList vs LinkedList
 

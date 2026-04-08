@@ -50,7 +50,7 @@ public class HashSetMutationDemo {
         // Ændrer ID, som bruges i hashCode + equals
         alice.setId(99);
 
-        System.out.println("\nEfter ændring:");
+        System.out.println("Efter ændring:");
         System.out.println("Indeholder Alice? " + students.contains(alice)); // false!
         System.out.println("Prøver at fjerne Alice: " + students.remove(alice)); // false!
         System.out.println("Sættet indeholder:");
