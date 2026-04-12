@@ -57,6 +57,17 @@ public class HashSetMutationDemo {
         for (Student s : students) {
             System.out.println(" - " + s);
         }
+
+        Student charlie = new Student("Charlie", 2);
+        Student bob = new Student("Bob", 2);
+        students.add(charlie);
+        students.add(bob);
+
+        System.out.println("Sættet indeholder nu:");
+        for (Student s : students) {
+            System.out.println(" - " + s);
+        }
+
     }
 }
 

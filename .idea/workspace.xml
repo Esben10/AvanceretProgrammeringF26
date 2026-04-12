@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4a9a5430-e83d-4879-8d5e-c9086862fc55" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio_exercises/searchandsort/complexity.md" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio_exercises/searchandsort/complexity.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/searchandsort/BigOExamples.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/searchandsort/BigOExamples.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/searchandsort/HashSetMutationDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/searchandsort/HashSetMutationDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/searchandsort/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/searchandsort/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/searchandsort/TreeSetMutationDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/searchandsort/TreeSetMutationDemo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +81,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/kong/OneDrive - Erhvervsakademi København/Dokumenter/Valgfag/Avanceret Programmering/F26/AvanceretProgrammeringF26&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kong/OneDrive - Erhvervsakademi København/Dokumenter/Valgfag/Materialer/F26/AvanceretProgrammeringF26&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -115,14 +119,13 @@
       <recent name="concurrency.executorexercise" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Quiz">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="reflection.fieldsandmethods.Main" />
+  <component name="RunManager" selected="Application.HashSetMutationDemo">
+    <configuration name="BigOExamples" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="searchandsort.BigOExamples" />
       <module name="AvanceretProgrammering" />
-      <option name="PROGRAM_PARAMETERS" value="reflection.fieldsandmethods.SecretBox" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="reflection.fieldsandmethods.*" />
+          <option name="PATTERN" value="searchandsort.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -130,13 +133,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MysteryInspectorSolution" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="reflection.fieldsandmethods.MysteryInspectorSolution" />
+    <configuration name="HashSetMutationDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="searchandsort.HashSetMutationDemo" />
       <module name="AvanceretProgrammering" />
-      <option name="PROGRAM_PARAMETERS" value="reflection.fieldsandmethods.SecretBox" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="reflection.fieldsandmethods.*" />
+          <option name="PATTERN" value="searchandsort.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="searchandsort.Main" />
+      <module name="AvanceretProgrammering" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="searchandsort.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -157,25 +172,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="reflection.annotations.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="reflection.annotations.Main" />
+    <configuration name="TreeSetMutationDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="searchandsort.TreeSetMutationDemo" />
       <module name="AvanceretProgrammering" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="reflection.annotations.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="reflection.annotations_solution.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="reflection.annotations_solution.Main" />
-      <module name="AvanceretProgrammering" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="reflection.annotations_solution.*" />
+          <option name="PATTERN" value="searchandsort.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -184,19 +186,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.BigOExamples" />
+      <item itemvalue="Application.HashSetMutationDemo" />
+      <item itemvalue="Application.TreeSetMutationDemo" />
       <item itemvalue="Application.Quiz" />
-      <item itemvalue="Application.reflection.annotations.Main" />
-      <item itemvalue="Application.reflection.annotations_solution.Main" />
       <item itemvalue="Application.Main" />
-      <item itemvalue="Application.MysteryInspectorSolution" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Quiz" />
-        <item itemvalue="Application.reflection.annotations_solution.Main" />
-        <item itemvalue="Application.reflection.annotations.Main" />
-        <item itemvalue="Application.MysteryInspectorSolution" />
+        <item itemvalue="Application.HashSetMutationDemo" />
+        <item itemvalue="Application.TreeSetMutationDemo" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.BigOExamples" />
+        <item itemvalue="Application.Quiz" />
       </list>
     </recent_temporary>
   </component>
@@ -260,6 +262,9 @@
       <workItem from="1747637016104" duration="240000" />
       <workItem from="1774267761237" duration="8502000" />
       <workItem from="1775647546580" duration="34000" />
+      <workItem from="1775647728297" duration="722000" />
+      <workItem from="1775912027806" duration="594000" />
+      <workItem from="1775975157933" duration="2537000" />
     </task>
     <servers />
   </component>

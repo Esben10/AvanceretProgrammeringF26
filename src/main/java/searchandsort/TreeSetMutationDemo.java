@@ -1,5 +1,6 @@
 package searchandsort;
 
+import java.sql.SQLOutput;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -52,5 +53,11 @@ public class TreeSetMutationDemo {
 
         System.out.println("\nEfter ændring (Alice har nu id=3):");
         students.forEach(System.out::println);
+
+        System.out.println("Findes Alice? " + students.contains(alice));
+        students.remove(alice);
+        students.forEach(System.out::println);
+
+        System.out.println("Findes Alice? " + students.contains(alice));
     }
 }
