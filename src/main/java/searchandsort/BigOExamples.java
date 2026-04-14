@@ -21,6 +21,10 @@ public class BigOExamples {
         System.out.println("Jeg printer altid én gang, uanset n.");
     }
 
+    public static int firstElement(int[] arr) {
+        return arr[0];
+    }
+
     // O(log n) - Logaritmisk tid (Binær nedtælling)
     public static void logTime(int n) {
         for (int i = n; i > 1; i /= 2) {
@@ -28,11 +32,30 @@ public class BigOExamples {
         }
     }
 
+    public static int binarySearch(int[] arr, int target) {
+        int low = 0, high = arr.length - 1;
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            if (arr[mid] == target) return mid;
+            else if (arr[mid] < target) low = mid + 1;
+            else high = mid - 1;
+        }
+        return -1;
+    }
+
     // O(n) - Lineær tid
     public static void linearTime(int n) {
         for (int i = 0; i < n; i++) {
             System.out.println("Itererer: " + i);
         }
+    }
+
+    public static int findMax(int[] arr) {
+        int max = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > max) max = arr[i];
+        }
+        return max;
     }
 
     // O(n^2) - Kvadratisk tid
