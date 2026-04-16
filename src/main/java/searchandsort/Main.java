@@ -10,9 +10,13 @@ public class Main {
     public static void main(String[] args) {
        //  testComplexity();
        // testLinearAndBinarySearch();
-       testBubble(10, true, true);
-       testMerge(10, true, true);
-
+       // testBubble(10, true, true);
+       //  testMerge(10, true, true);
+       /* Student[] arr = createCardArray();
+       printArray("Før sortering", arr);
+       SortExamples.mergeSort(arr);
+       printArray("Efter sortering", arr);
+       */
     }
 
     private static void testComplexity() {
@@ -138,9 +142,15 @@ public class Main {
         }
     }
 
-
-
-
-
+    private static Student[] createCardArray(){
+        Student[] arr = new Student[6];
+        arr[0] =  new Student("Tre", 3);
+        arr[1] = new Student("Ni", 9);
+        arr[2] = new Student("Syv", 7);
+        arr[3] = new Student("10", 10);
+        arr[4] = new Student("Dronning", 12);
+        arr[5] = new Student("Fire", 4);
+        return arr;
+    }
 
 }

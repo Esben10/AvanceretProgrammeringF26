@@ -6,13 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4a9a5430-e83d-4879-8d5e-c9086862fc55" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_exercises/searchandsort/sort.md" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio_exercises/searchandsort/sort.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/searchandsort/BigOExamples.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/searchandsort/BigOExamples.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/searchandsort/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/searchandsort/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/searchandsort/SortExamples.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/searchandsort/SortExamples.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/searchandsort/TreeSetMutationDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/searchandsort/TreeSetMutationDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/searchandsort/entities/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/searchandsort/entities/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/searchandsort/util/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/searchandsort/util/Factory.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +43,7 @@
     "Application.BigOExamples.executor": "Run",
     "Application.CycleDetector.executor": "Run",
     "Application.HashSetMutationDemo.executor": "Run",
-    "Application.Main.executor": "Run",
+    "Application.Main.executor": "Debug",
     "Application.MazeExercise.executor": "Run",
     "Application.MazeSolution.executor": "Debug",
     "Application.MoneyHandler.executor": "Run",
@@ -269,7 +263,8 @@
       <workItem from="1775975157933" duration="3819000" />
       <workItem from="1776061787323" duration="9805000" />
       <workItem from="1776151928392" duration="5741000" />
-      <workItem from="1776237350874" duration="6346000" />
+      <workItem from="1776237350874" duration="6874000" />
+      <workItem from="1776327955785" duration="2275000" />
     </task>
     <servers />
   </component>
@@ -308,6 +303,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/searchandsort/SearchExamples.java</url>
           <line>20</line>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/searchandsort/SortExamples.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
