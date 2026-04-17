@@ -12,7 +12,6 @@ Din opgave er
     
 Bonusspørgsmål: Hvordan kan man på koden alene se, at listen ender ved null? Og hvordan kunne man have lavet en cyklus i stedet?
 
-
 ## 2. Reverser listen
 
 Du skal nu lave en metode, som kan vende listen om. Det vil sige, at hvis vi giver en liste i form af en `Node` (listens head) som parameter til 
@@ -37,8 +36,6 @@ returnerer head-`Node` i den omvendte liste (du kan lave den i `searchandsort.Ma
   - Du løser opgaven ved at få hver enkelt `Node` til at pege på sin nuværende foregående `Node` i stedet for sin nuværende næste 
   - Du kan med fordel skrive din kode i pseudokode før du implementerer den for at øve dig i at tænke algoritmisk. Det er her pointer-kontrol kommer ind.  
   - Test din kode ved at køre `main` i klassen `searchandsort.Main`. (hint: du skal override `toString()` i `Node`)
-  
-
 
 ## 3. Tegn en cyklisk liste
 Kig på klassen `circularlinkedList.ListFactory`. 
@@ -78,61 +75,33 @@ en boolean, der angiver om listen er cycklisk.
 
 Bonusopgave: Kan du forudse hvad `floydexample.TraversingArrays.hasCycle(..)` vil returnere med inputtet ` int[] test = {2, 0, 1}` og hvorfor?
 
-## 5. BFS
+## 5. Grådig algoritme
 
-Kig på klassen `graphsearch.SearchStrategies`. I klassen er metoden `searchBFS(..)`. 
+Du skal lave en algoritme, som kan beregne hvor meget træ af forskellige længder vi skal bruge til at opnå en target-længde.
 
-Din opgave er
-
-- Gå metodens kode igennem linje for linje og forklar for din sidemakker hvad den gør. 
-- Tegn evt indholdet af køen iteration for hver iteration. 
-- Overvej hvad det betyder, at vi bruger en `Queue` (hint: det er en FIFO struktur).
-
-
-## 6. DFS
-
-Kig på klassen `graphsearch.SearchStrategies`. I klassen er metoden `searchDFS(..)`.
-
-Din opgave er
-
-- Gå metodens kode igennem linje for linje og forklar for din sidemakker hvad den gør.
-- Tegn evt indholdet af stakken iteration for hver iteration.
-- Overvej hvad det betyder, at vi bruger et `Deque` (hint: det er en LIFO struktur).
-
-Bonusspørgsmål: Hvordan kan vi bruge `ArrayDeque` som både stak og kø? 
-
-## 7. Implementer din egen BFS og DFS
-
-Kig på klasserne `treesearch.Node` og `treesearch.SearchStrategies`. Klassen `Node` repræsenterer en node i et træ, 
-som kan have andre noder som børn. 
+Vi har træ liggende i længderne 7, 5 og 2 meter. Så hvis vi skal bruge 12 meter, stykker vi det sammen af 7 og 5 meter.
 
 Opgaven er nu
 
-- Implementer metoderne `searchBFS(..)` og `searchDFS(..)`.
-- Hent inspiration i `graphsearch.SearchStrategies`. Du skal ikke kopiere koden fra `graphsearch` pakken,
-men forstå hvordan der traverseres gennem grafen og gøre det samme i dine træer. 
+- Lav en klasse `WoodHandler` med metoden `List<Integer> calculateWood(int target)` som tager en target-længde som parameter
+  og returnerer en liste af de længder, vi skal bruge. Fx vil `calculateWood(11)` returnere en liste med tallene 7, 2, 2.
+- Hvis metoden ikke kan ramme target præcist, kan du lade den returnere det, der kommer tættest på. Fx skal `calculateWood(13)` returnere
+  7, 5, 2.
+- Du kan også vælge at returnere `null` hvis metoden ikke kan ramme target præcist.
 
-Bonusspørgsmål: hvordan udvider vi til at detektere cyklusser? Se klassen `graphsearchcycles.CycleDetector`.
+I hvilke tilfælde giver den grådige algoritme den bedst mulige løsning –
+og i hvilke tilfælde kunne færre stykker være muligt med en anden strategi?
 
-## Bonus
+Bonus:
+- Lav en lazy-version af calculateWood(int target), hvor vi husker tidligere beregninger
+    - Brug fx Map<Integer, List<Integer>> til at cache løsninger
+    - Så hvis vi igen skal bruge 11 meter, slår vi det bare op
 
-Kig på pakken `undirectedgraphs` hvor der arbejdes med grafer, hvor kanterne er urettede. Det gør, at vi skal 
-bruge en anden strategi for at finde ud af om der er cyklus i grafen. 
+- Find den løsning med færrest antal stykker ved hjælp af backtracking
+    - Brug rekursion og prøv alle kombinationer
+    - Gem den bedste (mindste) løsning
 
-I pseudokode ser det sådan ud: 
-1. Start traversal fra en node
-2. Marker den som visited
-3. For hver nabo:
-   - a. Hvis nabo ikke er visited:
-     - DFS på nabo (med current som parent)
-   - b. Hvis nabo er visited:
-     - Hvis nabo != parent:
-       - Cyklus fundet!
-
-Kig på koden og se om du kan tegne på papir hvad der sker. Du kan tilføje nogle udprint
-i metoden og se om din tegning stemmer overens med output fra metoden. 
-
-## 8. Prøv alle muligheder - følg koden
+## 6. Prøv alle muligheder - følg koden
 
 Kig på koden i `algorithms/backtracking/TryBacktrack`. Der er fem metoder, som printer forskellige tal- eller strengkombinationer.
 Du skal først gætte, hvad output bliver – og bagefter teste din forståelse. Kig på de første
@@ -154,7 +123,7 @@ Opgaven er
 
 Bonus:Se på `exploreWithBacktrack(...)`. Hvad ændrer sig i output? (Se om du kan gennemskue det før du kører koden)
 
-## 9. Maze solver
+## 7. Maze solver
 
 Du har en labyrint, du skal gå igennem. Labyrinten er repræsenteret af et to-dimensionelt array hvor
 - `1` betyder "du kan gå her"
@@ -196,7 +165,7 @@ Opgaven er nu
 
 Du kan søge inspiration i `backtracking/NQueeens` og der er vejledende løsninger i `mazesolution/MazeSolution`. 
 
-## 10 Dovne beregninger
+## 8. Dovne beregninger
 
 Kig på koden i `lazy.LazyCalculations`. Hvad sker der hvis vi kalder metoden `lazyFactorial(..)` med 5 som argument?
 Og hvad sker der, hvis vi efterfølgende kalder metoden med 3 som argument? 
@@ -210,30 +179,5 @@ og `eagerSum(..)` som blot slår op i det map, der er lavet i `init()`. Sæt cou
 der udføres. Test i `main` hvor lang tid en beregning i de dovne metoder tager i forhold til de eager? Og hvor lang tid opstart
 tager (kald til `init()`). Måske skal du lægge kunstig tid ind i beregningsdelene for at se en effekt på små datasæt. 
 
-## 11 Grådig algoritme
-
-Du skal lave en algoritme, som kan beregne hvor meget træ af forskellige længder vi skal bruge til at opnå en target-længde.
-
-Vi har træ liggende i længderne 7, 5 og 2 meter. Så hvis vi skal bruge 12 meter, stykker vi det sammen af 7 og 5 meter. 
-
-Opgaven er nu
-
-- Lav en klasse `WoodHandler` med metoden `List<Integer> calculateWood(int target)` som tager en target-længde som parameter 
-og returnerer en liste af de længder, vi skal bruge. Fx vil `calculateWood(11)` returnere en liste med tallene 7, 2, 2. 
-- Hvis metoden ikke kan ramme target præcist, kan du lade den returnere det, der kommer tættest på. Fx skal `calculateWood(13)` returnere 
-7, 5, 2. 
-- Du kan også vælge at returnere `null` hvis metoden ikke kan ramme target præcist. 
-
-I hvilke tilfælde giver den grådige algoritme den bedst mulige løsning –
-og i hvilke tilfælde kunne færre stykker være muligt med en anden strategi?
-
-Bonus: 
-- Lav en lazy-version af calculateWood(int target), hvor vi husker tidligere beregninger
-  - Brug fx Map<Integer, List<Integer>> til at cache løsninger
-  - Så hvis vi igen skal bruge 11 meter, slår vi det bare op
-
-- Find den løsning med færrest antal stykker ved hjælp af backtracking
-  - Brug rekursion og prøv alle kombinationer
-  - Gem den bedste (mindste) løsning
 
 

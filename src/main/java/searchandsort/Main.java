@@ -12,11 +12,11 @@ public class Main {
        // testLinearAndBinarySearch();
        // testBubble(10, true, true);
        //  testMerge(10, true, true);
-       /* Student[] arr = createCardArray();
+        Student[] arr = createCardArray();
        printArray("Før sortering", arr);
        SortExamples.mergeSort(arr);
        printArray("Efter sortering", arr);
-       */
+
     }
 
     private static void testComplexity() {

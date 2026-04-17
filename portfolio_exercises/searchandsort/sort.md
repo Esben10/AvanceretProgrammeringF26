@@ -6,7 +6,7 @@
 Hvad sorteres de studerende efter? Hvad gør metoden `Collections.swap()`?
 Hvad styrer den ydre løkke? Hvad styrer den indre løkke?
 - Implementer en ny bubblesort-metode, som tager et `int[]` som parameter. Lad være med
-  at kopiere koden fra `SortExamples`. Kommenter din kode, så du ved hvad der sker i hvert step. 
+  at copy-paste koden fra `SortExamples`. Kommenter din kode, så du ved hvad der sker i hvert step. 
 
 NB: `Collections.swap()` virker ikke på et int[] så du får brug for at lave din egen 
 swap. Du kan fx bruge nedenstående kode: 
@@ -26,7 +26,7 @@ og `merge()`.
 Hvad er basecase i den rekursive metode `mergeSort()` og hvorfor? Hvorfor returnerer 
 ingen af metoderne noget? 
 - Implementer en ny mergesort-metode, som tager et `int[]` som parameter. Lad være med 
-at kopiere koden fra `SortExamples`. Kommenter din kode, så du ved hvad der sker i hvert step.
+at copy-paste koden fra `SortExamples`. Kommenter din kode, så du ved hvad der sker i hvert step.
 
 Bonus: kig på metoderne `mergeSortList` og `mergeList()`. Hvordan adskiller de sig 
 fra de metoder, der tager arrays som paramter? Hvad betyder fx `new ArrayList<>(students.subList(0, mid))`? 
@@ -38,4 +38,4 @@ Hvorfor bruges metoden `set()` og ikke `add()` i `mergeList()`?
 - Prøv at køre metoden `testQuick()`fra `Main.main` og se om du forstår hvad der sker.
 - Udkommenter ` Collections.shuffle(original)` og se hvad der sker med `quickSort()`. Hvorfor sker dette? (Hint: worst case scenario)
 - Implementer en ny quicksort-metode, som tager et `int[]` som parameter. Lad være med
-  at kopiere koden fra `SortExamples`. Kommenter din kode, så du ved hvad der sker i hvert step.
+  at copy-paste koden fra `SortExamples`. Kommenter din kode, så du ved hvad der sker i hvert step.
