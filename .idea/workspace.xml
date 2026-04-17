@@ -5,16 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a9a5430-e83d-4879-8d5e-c9086862fc55" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/algorithms/cycle_detection_preparation.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/algorithms/graph_preparation.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/portfolio_exercises/graphs/bfs_dfs.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_exercises/algorithms/algorithms_exercises.md" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio_exercises/algorithms/algorithms.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_exercises/algorithms/backtracking.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/algorithms/backtracking.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_exercises/algorithms/preparation.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_exercises/case/Case - LogistikEkspressen.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Case - LogistikEkspressen.pdf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/portfolio_exercises/searchandsort/sort.md" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio_exercises/searchandsort/sort.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/searchandsort/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/searchandsort/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,7 +269,7 @@
       <workItem from="1776327955785" duration="2275000" />
       <workItem from="1776335594049" duration="1105000" />
       <workItem from="1776336725823" duration="7163000" />
-      <workItem from="1776409485271" duration="4203000" />
+      <workItem from="1776409485271" duration="5511000" />
     </task>
     <servers />
   </component>

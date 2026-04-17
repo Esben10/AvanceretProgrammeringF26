@@ -36,6 +36,6 @@ Hvorfor bruges metoden `set()` og ikke `add()` i `mergeList()`?
 ## 3. Quick sort
 - Kig på klassen `searchandsort.SortExamples` og metoden `quickSort()`.
 - Prøv at køre metoden `testQuick()`fra `Main.main` og se om du forstår hvad der sker.
-- Udkommenter ` Collections.shuffle(original)` og se hvad der sker med `quickSort()`. Hvorfor sker dette? (Hint: worst case scenario)
-- Implementer en ny quicksort-metode, som tager et `int[]` som parameter. Lad være med
+- Udkommenter ` Collections.shuffle(list)` og se hvad der sker med `SortExamples.quickSort()`. Hvorfor sker dette? (Hint: worst case scenario)
+- Implementer en ny quick sort-metode, som tager et `int[]` som parameter. Lad være med
   at copy-paste koden fra `SortExamples`. Kommenter din kode, så du ved hvad der sker i hvert step.
