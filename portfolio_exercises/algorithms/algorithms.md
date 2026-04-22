@@ -1,50 +1,13 @@
-# Øvelser: Algoritmer
+# Portfolio: Algoritmer
 
-## 1. Tegn en hægtet liste
-
-Kig på klassen `reversedlinkedlist.ListFactory` som kan bygge hægtede lister til os.
-
-Din opgave er 
-
-- Tegn den liste, der returneres fra kaldet `buildList(..)` med et array `{1, 5, 7, 12, 17}`. 
-  - Tegn de forskellige `Node` objekter med attributter
-  - Tegn pile fra attributter til de objekter, der refereres til
-    
-Bonusspørgsmål: Hvordan kan man på koden alene se, at listen ender ved null? Og hvordan kunne man have lavet en cyklus i stedet?
-
-## 2. Reverser listen
-
-Du skal nu lave en metode, som kan vende listen om. Det vil sige, at hvis vi giver en liste i form af en `Node` (listens head) som parameter til 
-metoden, skal den returnere en `Node`  som er head i den omvendte liste.
-
-Fx bliver listen 
-
-```java 
-1 ⟶ 2 ⟶ 3 ⟶ 4 ⟶ 5 ⟶ null 
-```
-
-til 
-
-```java 
-5 ⟶ 4 ⟶ 3 ⟶ 2 ⟶ 1 ⟶ null
-```
-
-Opgaven er nu
-
-- Lav en metode `public Node reverseList(Node n)` som tager en `Node` og 
-returnerer head-`Node` i den omvendte liste (du kan lave den i `searchandsort.Main`)
-  - Du løser opgaven ved at få hver enkelt `Node` til at pege på sin nuværende foregående `Node` i stedet for sin nuværende næste 
-  - Du kan med fordel skrive din kode i pseudokode før du implementerer den for at øve dig i at tænke algoritmisk. Det er her pointer-kontrol kommer ind.  
-  - Test din kode ved at køre `main` i klassen `searchandsort.Main`. (hint: du skal override `toString()` i `Node`)
-
-## 3. Tegn en cyklisk liste
+## 1. Tegn en cyklisk liste
 Kig på klassen `circularlinkedList.ListFactory`. 
 
 - Tegn den liste, der returneres fra et kald til `buildListWithCycle()`
     - Tegn de forskellige `Node` objekter med attributter
     - Tegn pile fra attributter til de objekter, der refereres til
 
-## 4. Lav en cycle detector
+## 2. Lav en cycle detector
 Du skal nu lave en metode, som kan detektere om en liste er cyklisk. Det vil sige, at hvis vi giver en `Node` (ikke nødvendigvis head) til 
 metoden, skal den returnere `true` eller `false` alt efter om listen er cyklisk eller ej. 
 
@@ -75,7 +38,7 @@ en boolean, der angiver om listen er cycklisk.
 
 Bonusopgave: Kan du forudse hvad `floydexample.TraversingArrays.hasCycle(..)` vil returnere med inputtet ` int[] test = {2, 0, 1}` og hvorfor?
 
-## 5. Grådig algoritme
+## 3. Grådig algoritme
 
 Du skal lave en algoritme, som kan beregne hvor meget træ af forskellige længder vi skal bruge til at opnå en target-længde.
 
@@ -101,29 +64,7 @@ Bonus:
     - Brug rekursion og prøv alle kombinationer
     - Gem den bedste (mindste) løsning
 
-## 6. Prøv alle muligheder - følg koden
-
-Kig på koden i `algorithms/backtracking/TryBacktrack`. Der er fem metoder, som printer forskellige tal- eller strengkombinationer.
-Du skal først gætte, hvad output bliver – og bagefter teste din forståelse. Kig på de første
-tre og skriv ned, hvad de vil printe
-
-Opgaven er altså 
-
-- hvad printer `simpleForloop()`?
-- hvad printer `innerLoop()`?
-- hvad printer `moreInnerLoops()`?
-- Kør `main` og se om du har ret. 
-
-Kig dernæst på koden i `explore(..)`. Den printer det samme som `moreInnerLoops()`. Forstår du hvorfor? Sæt evt. breakpoints og kør koden. 
-
-Opgaven er 
-
-- hvad bruges parametrene `step` og `path` til?
-- hvorfor har vi brug for parametre her, men ikke i fx `moreInnerLoops()`?
-
-Bonus:Se på `exploreWithBacktrack(...)`. Hvad ændrer sig i output? (Se om du kan gennemskue det før du kører koden)
-
-## 7. Maze solver
+## 4. Backtracking
 
 Du har en labyrint, du skal gå igennem. Labyrinten er repræsenteret af et to-dimensionelt array hvor
 - `1` betyder "du kan gå her"
@@ -163,9 +104,9 @@ Opgaven er nu
     - venstre
   - Hvis ingen muligheder virker, så backtrack (og fjern feltet fra `path`)
 
-Du kan søge inspiration i `backtracking/NQueeens` og der er vejledende løsninger i `mazesolution/MazeSolution`. 
+Du kan søge inspiration i `backtracking/NQueeens`  
 
-## 8. Dovne beregninger
+## 5. Dovne beregninger
 
 Kig på koden i `lazy.LazyCalculations`. Hvad sker der hvis vi kalder metoden `lazyFactorial(..)` med 5 som argument?
 Og hvad sker der, hvis vi efterfølgende kalder metoden med 3 som argument? 

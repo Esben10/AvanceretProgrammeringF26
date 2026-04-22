@@ -1,4 +1,6 @@
-## 5. BFS
+# Søgning i grafer
+
+## 1. BFS
 
 Kig på klassen `graphsearch.SearchStrategies`. I klassen er metoden `searchBFS(..)`.
 
@@ -9,7 +11,7 @@ Din opgave er
 - Overvej hvad det betyder, at vi bruger en `Queue` (hint: det er en FIFO struktur).
 
 
-## 6. DFS
+## 2. DFS
 
 Kig på klassen `graphsearch.SearchStrategies`. I klassen er metoden `searchDFS(..)`.
 
@@ -21,7 +23,7 @@ Din opgave er
 
 Bonusspørgsmål: Hvordan kan vi bruge `ArrayDeque` som både stak og kø?
 
-## 7. Implementer din egen BFS og DFS
+## 3. Implementer din egen BFS og DFS
 
 Kig på klasserne `treesearch.Node` og `treesearch.SearchStrategies`. Klassen `Node` repræsenterer en node i et træ,
 som kan have andre noder som børn.
@@ -48,6 +50,4 @@ I pseudokode ser det sådan ud:
     - b. Hvis nabo er visited:
         - Hvis nabo != parent:
             - Cyklus fundet!
-
-Kig på koden og se om du kan tegne på papir hvad der sker. Du kan tilføje nogle udprint
 i metoden og se om din tegning stemmer overens med output fra metoden. 

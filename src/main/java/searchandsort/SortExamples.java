@@ -2,6 +2,7 @@ package searchandsort;
 
 import searchandsort.entities.Student;
 
+import java.security.spec.RSAOtherPrimeInfo;
 import java.util.*;
 
 public class SortExamples {
@@ -48,6 +49,14 @@ public class SortExamples {
         }
         Collections.swap(students, i + 1, high);
         return i + 1;
+    }
+
+    public static void recursiveCall(int i){
+        if(i < 1)
+            return;
+        i--;
+        System.out.println(i);
+        recursiveCall(i);
     }
 
     public static void mergeSort(Student[] students){

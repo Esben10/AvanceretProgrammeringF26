@@ -2,7 +2,7 @@
 
 Vi skal i gang med grafalgoritmer og to klassiske søgestrategier: Breadth-First Search (BFS) og Depth-First Search (DFS).
 
-## 3. Hvad er en graf?
+## 1. Hvad er en graf?
 
 En graf er en datastruktur, der består af:
 
@@ -32,7 +32,7 @@ Anvendelser:
 
 Når vi skal undersøge grafer, bruger vi Breadth-First Search eller (BFS) eller Depth-First Search (DFS).
 
-## 4. Refleksionsspørgsmål til grafer
+## 2. Refleksionsspørgsmål til grafer
 
 Du står i en by og vil finde alle byer, du kan nå via veje. Hvordan ville du holde styr på, hvad du har besøgt – og hvad du mangler?
 I hvilken rækkefølge ville du besøge noderne?

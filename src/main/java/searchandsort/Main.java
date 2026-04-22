@@ -12,10 +12,14 @@ public class Main {
        // testLinearAndBinarySearch();
        // testBubble(10, true, true);
        //  testMerge(10, true, true);
-        Student[] arr = createCardArray();
+        testQuick(50000, true,true);
+      /*  Student[] arr = createCardArray();
        printArray("Før sortering", arr);
-       SortExamples.mergeSort(arr);
-       printArray("Efter sortering", arr);
+       List<Student> cards = Arrays.asList(arr); */
+      // SortExamples.quickSort(cards, 0, cards.size()-1);
+      // SortExamples.mergeSort(arr);
+      // printArray("Efter sortering", arr);
+        //SortExamples.recursiveCall(10);
 
     }
 
@@ -105,7 +109,7 @@ public class Main {
     private static void testQuick(int size, boolean time, boolean print) {
         List<Student> list = new ArrayList<>();
         Factory.fillWithStudents(list, size);
-        Collections.shuffle(list);
+        //Collections.shuffle(list);
         if (print) printList("Quick Sort - før", list);
         long start = System.currentTimeMillis();
         SortExamples.quickSort(list, 0, list.size() - 1);

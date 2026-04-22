@@ -4,7 +4,7 @@ public class MoneyHandler {
 
     public static void main(String[] args) {
         // standard bills
-        System.out.println("Udbetaling med 50, 100, 500, 1000 og 5000 kr-bills:");
+        System.out.println("Udbetaling med 50, 100, 500 og 1000 kr-sedler:");
         int[] bills = {5000, 2000, 1000, 500, 100, 50};
         greedyChange(bills, 1200);
         greedyChange(bills, 1300);
