@@ -17,16 +17,19 @@ public class TraversingArrays {
         int fast = 0;
 
         while (true) {
-            // Første hop for slow
-            if (slow < 0 || slow >= array.length) return false;
+            // Hvis slow er hoppet udenfor array er der ingen cyklus
+            if (slow >= array.length) return false;
+            // Slow hopper én gang
             slow = array[slow];
 
-            // Første hop for fast
-            if (fast < 0 || fast >= array.length) return false;
+            // Hvis fast er hoppet udenfor array er der ingen cyklus
+            if (fast >= array.length) return false;
+            // Fast hopper én gang
             fast = array[fast];
 
-            // Andet hop for fast
-            if (fast < 0 || fast >= array.length) return false;
+            // Hvis fast nu er hoppet udenfor array er der ingen cyklus
+            if (fast >= array.length) return false;
+            // Fast hopper endnu én gang
             fast = array[fast];
 
             // Check om de mødes

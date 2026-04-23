@@ -1,7 +1,7 @@
 # Portfolio: Algoritmer
 
 ## 1. Tegn en cyklisk liste
-Kig på klassen `circularlinkedList.ListFactory`. 
+Kig på klassen `algorithms.circularlinkedList.ListFactory`. 
 
 - Tegn den liste, der returneres fra et kald til `buildListWithCycle()`
     - Tegn de forskellige `Node` objekter med attributter
@@ -26,7 +26,7 @@ vil returnere `true`.
 
 Opgaven er nu
 
-- Lav en metode `public boolean hasCycle (Node head)` (fx i klassen `circularlinkedlist.searchandsort.Main`) som tager en `Node` som parameter og returnerer
+- Lav en metode `public boolean hasCycle (Node head)` (fx i klassen `circularlinkedlist.Main`) som tager en `Node` som parameter og returnerer
 en boolean, der angiver om listen er cycklisk. 
   - Du skal bruge to pointere `slow` og `fast`
   - `slow` skal bevæge sig gennem listen ét skridt ad gangen
@@ -34,7 +34,7 @@ en boolean, der angiver om listen er cycklisk.
   - Hver gang de to pointere har flyttet sig skal du undersøge om de har ramt hinanden
   - Hvis rammer hinanden returneres `true`.
   - Hvis `fast` når enden af listen returneres `false`
-  - Test din kode ved at køre `main` i klassen `searchandsort.Main`
+  - Test din kode ved at køre `main` i klassen `circularlinkedlist.Main`
 
 Bonusopgave: Kan du forudse hvad `floydexample.TraversingArrays.hasCycle(..)` vil returnere med inputtet ` int[] test = {2, 0, 1}` og hvorfor?
 
