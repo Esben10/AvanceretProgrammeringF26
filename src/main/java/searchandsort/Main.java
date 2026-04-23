@@ -12,15 +12,10 @@ public class Main {
        // testLinearAndBinarySearch();
        // testBubble(10, true, true);
        //  testMerge(10, true, true);
-        testQuick(50000, true,true);
-      /*  Student[] arr = createCardArray();
-       printArray("Før sortering", arr);
-       List<Student> cards = Arrays.asList(arr); */
-      // SortExamples.quickSort(cards, 0, cards.size()-1);
-      // SortExamples.mergeSort(arr);
-      // printArray("Efter sortering", arr);
-        //SortExamples.recursiveCall(10);
-
+       // testQuick(50000, true, true);
+        testBubbleInt();
+        testMergeInt();
+        testQuickInt();
     }
 
     private static void testComplexity() {
@@ -144,6 +139,27 @@ public class Main {
         for(Student s:arr){
             System.out.println(s);
         }
+    }
+
+    private static void testBubbleInt() {
+        int[] arr = {64, 34, 25, 12, 22, 11, 90};
+        System.out.println("Bubble Sort int[] - før:  " + Arrays.toString(arr));
+        SortExamples.bubbleSort(arr);
+        System.out.println("Bubble Sort int[] - efter: " + Arrays.toString(arr));
+    }
+
+    private static void testMergeInt() {
+        int[] arr = {38, 27, 43, 3, 9, 82, 10};
+        System.out.println("Merge Sort int[]  - før:  " + Arrays.toString(arr));
+        SortExamples.mergeSort(arr);
+        System.out.println("Merge Sort int[]  - efter: " + Arrays.toString(arr));
+    }
+
+    private static void testQuickInt() {
+        int[] arr = {10, 7, 8, 9, 1, 5};
+        System.out.println("Quick Sort int[]  - før:  " + Arrays.toString(arr));
+        SortExamples.quickSort(arr, 0, arr.length - 1);
+        System.out.println("Quick Sort int[]  - efter: " + Arrays.toString(arr));
     }
 
     private static Student[] createCardArray(){
