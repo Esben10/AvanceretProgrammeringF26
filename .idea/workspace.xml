@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4a9a5430-e83d-4879-8d5e-c9086862fc55" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_exercises/algorithms/algorithms.md" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio_exercises/algorithms/algorithms.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/floydexample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/floydexample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/floydexample/TraversingArrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/floydexample/TraversingArrays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/greedy/MoneyHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/greedy/MoneyHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +118,7 @@
       <recent name="concurrency.executorexercise" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.algorithms.floydexample.Main">
+  <component name="RunManager" selected="Application.MoneyHandler">
     <configuration name="BigOExamples" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="searchandsort.BigOExamples" />
       <module name="AvanceretProgrammering" />
@@ -195,8 +193,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.algorithms.floydexample.Main" />
         <item itemvalue="Application.MoneyHandler" />
+        <item itemvalue="Application.algorithms.floydexample.Main" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.TreeSetMutationDemo" />
         <item itemvalue="Application.BigOExamples" />
@@ -278,7 +276,7 @@
       <workItem from="1776758349993" duration="31000" />
       <workItem from="1776758406865" duration="6235000" />
       <workItem from="1776863439607" duration="3786000" />
-      <workItem from="1776931877583" duration="1044000" />
+      <workItem from="1776931877583" duration="2291000" />
     </task>
     <servers />
   </component>
