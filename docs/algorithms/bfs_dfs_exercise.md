@@ -2,7 +2,7 @@
 
 ## 1. BFS
 
-Kig på klassen `graphsearch.SearchStrategies`. I klassen er metoden `searchBFS(..)`.
+Kig på klassen `graphs.graphsearch.SearchStrategies`. I klassen er metoden `searchBFS(..)`.
 
 Din opgave er
 
@@ -13,7 +13,7 @@ Din opgave er
 
 ## 2. DFS
 
-Kig på klassen `graphsearch.SearchStrategies`. I klassen er metoden `searchDFS(..)`.
+Kig på klassen `graphs.graphsearch.SearchStrategies`. I klassen er metoden `searchDFS(..)`.
 
 Din opgave er
 

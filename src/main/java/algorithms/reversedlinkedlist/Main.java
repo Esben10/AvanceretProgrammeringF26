@@ -7,7 +7,7 @@ public class Main {
 
       Node head = ListFactory.buildList(1, 5, 7, 12, 17);
         System.out.println("LinkedList: " + head.toString());
-       // head = reverseList(head);
+      //  head = reverseList(head);
        // System.out.println("LinkedList reversed: " + head.toString());
     }
 

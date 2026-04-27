@@ -13,6 +13,9 @@ public class Main {
 
         Node circularList = ListFactory.buildListWithCycle();
       //   if(!hasCircle(circularList))
-        System.out.println(circularList);
+        System.out.println("Head: " + circularList.value);
     }
+
+
+
 }

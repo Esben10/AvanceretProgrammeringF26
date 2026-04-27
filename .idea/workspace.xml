@@ -5,9 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a9a5430-e83d-4879-8d5e-c9086862fc55" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/algorithms/greedy.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/algorithms/lazy.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/algorithms/backtracking.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/algorithms/backtracking_exercise.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/algorithms/bfs_dfs_exercise.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/algorithms/bfs_dfs_exercise.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio_exercises/algorithms/algorithms.md" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio_exercises/algorithms/algorithms.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/backtracking/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/backtracking/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/backtracking/NQueens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/backtracking/NQueens.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/backtracking/TryBacktrack.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/circularlinkedlist/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/circularlinkedlist/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/floydexample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/floydexample/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/floydexample/TraversingArrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/floydexample/TraversingArrays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/maze/MazeExercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/maze/MazeExercise.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/reversedlinkedlist/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/reversedlinkedlist/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/reversedlinkedlist/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/reversedlinkedlist/Node.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,61 +51,61 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.BigOExamples.executor": "Run",
-    "Application.CycleDetector.executor": "Run",
-    "Application.HashSetMutationDemo.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.MazeExercise.executor": "Run",
-    "Application.MazeSolution.executor": "Debug",
-    "Application.MoneyHandler.executor": "Run",
-    "Application.MysteryInspector.executor": "Run",
-    "Application.MysteryInspectorSolution.executor": "Run",
-    "Application.Quiz.executor": "Run",
-    "Application.SearchStrategies.executor": "Run",
-    "Application.TreeSetMutationDemo.executor": "Run",
-    "Application.TryBacktrack.executor": "Run",
-    "Application.WoodHandlerSolution.executor": "Run",
-    "Application.algorithms.backtracking.Main.executor": "Debug",
-    "Application.algorithms.circularlinkedlist.Main.executor": "Run",
-    "Application.algorithms.circularlinkedlistsolution.Main.executor": "Run",
-    "Application.algorithms.floydexample.Main.executor": "Run",
-    "Application.algorithms.reversedlinkedlist.Main.executor": "Run",
-    "Application.algorithms.reversedlinkedlistsolution.Main.executor": "Run",
-    "Application.algorithms.treesearchsolution.SearchStrategies.executor": "Run",
-    "Application.algorithms.undirectedgraphs.CycleDetector.executor": "Run",
-    "Application.concurrency.bankaccount.Main.executor": "Run",
-    "Application.concurrency.executorsolution.Main.executor": "Run",
-    "Application.concurrency.observersolution.Main.executor": "Run",
-    "Application.concurrency.observersolutionwiththreads.Main.executor": "Run",
-    "Application.concurrency.synchronization.Main.executor": "Run",
-    "Application.concurrency.threadandrunnable.Main.executor": "Run",
-    "Application.designpatterns.exercises.Main.executor": "Run",
-    "Application.designpatterns.main.Main.executor": "Run",
-    "Application.reflection.annotations.Main.executor": "Run",
-    "Application.reflection.annotations_solution.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/kong/OneDrive - Erhvervsakademi København/Dokumenter/Valgfag/Materialer/F26/AvanceretProgrammeringF26",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/kong/OneDrive - EFIF/Dokumenter/Valgfag/AvanceretProgrammering/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.BigOExamples.executor&quot;: &quot;Run&quot;,
+    &quot;Application.CycleDetector.executor&quot;: &quot;Run&quot;,
+    &quot;Application.HashSetMutationDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MazeExercise.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MazeSolution.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.MoneyHandler.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MysteryInspector.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MysteryInspectorSolution.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Quiz.executor&quot;: &quot;Run&quot;,
+    &quot;Application.SearchStrategies.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TreeSetMutationDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.TryBacktrack.executor&quot;: &quot;Run&quot;,
+    &quot;Application.WoodHandlerSolution.executor&quot;: &quot;Run&quot;,
+    &quot;Application.algorithms.backtracking.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.algorithms.circularlinkedlist.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.algorithms.circularlinkedlistsolution.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.algorithms.floydexample.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.algorithms.reversedlinkedlist.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.algorithms.reversedlinkedlistsolution.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.algorithms.treesearchsolution.SearchStrategies.executor&quot;: &quot;Run&quot;,
+    &quot;Application.algorithms.undirectedgraphs.CycleDetector.executor&quot;: &quot;Run&quot;,
+    &quot;Application.concurrency.bankaccount.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.concurrency.executorsolution.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.concurrency.observersolution.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.concurrency.observersolutionwiththreads.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.concurrency.synchronization.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.concurrency.threadandrunnable.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.designpatterns.exercises.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.designpatterns.main.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.reflection.annotations.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.reflection.annotations_solution.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/kong/OneDrive - Erhvervsakademi København/Dokumenter/Valgfag/Materialer/F26/AvanceretProgrammeringF26&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/kong/OneDrive - EFIF/Dokumenter/Valgfag/AvanceretProgrammering/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\kong\OneDrive - EFIF\Dokumenter\Valgfag\AvanceretProgrammering\src\main\java\reflection\annotations_solution" />
@@ -120,13 +132,13 @@
       <recent name="concurrency.executorexercise" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.algorithms.reversedlinkedlist.Main">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="searchandsort.Main" />
+      <option name="MAIN_CLASS_NAME" value="algorithms.backtracking.Main" />
       <module name="AvanceretProgrammering" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="searchandsort.*" />
+          <option name="PATTERN" value="algorithms.backtracking.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -134,25 +146,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MoneyHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="algorithms.greedy.MoneyHandler" />
+    <configuration name="TryBacktrack" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="algorithms.backtracking.TryBacktrack" />
       <module name="AvanceretProgrammering" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="algorithms.greedy.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TreeSetMutationDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="searchandsort.TreeSetMutationDemo" />
-      <module name="AvanceretProgrammering" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="searchandsort.*" />
+          <option name="PATTERN" value="algorithms.backtracking.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -186,20 +185,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="algorithms.reversedlinkedlistsolution.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="algorithms.reversedlinkedlistsolution.Main" />
+      <module name="AvanceretProgrammering" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="algorithms.reversedlinkedlistsolution.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
+      <item itemvalue="Application.TryBacktrack" />
       <item itemvalue="Application.algorithms.floydexample.Main" />
       <item itemvalue="Application.algorithms.reversedlinkedlist.Main" />
-      <item itemvalue="Application.MoneyHandler" />
-      <item itemvalue="Application.TreeSetMutationDemo" />
+      <item itemvalue="Application.algorithms.reversedlinkedlistsolution.Main" />
       <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.algorithms.reversedlinkedlist.Main" />
-        <item itemvalue="Application.MoneyHandler" />
-        <item itemvalue="Application.algorithms.floydexample.Main" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.TreeSetMutationDemo" />
+        <item itemvalue="Application.TryBacktrack" />
+        <item itemvalue="Application.algorithms.floydexample.Main" />
+        <item itemvalue="Application.algorithms.reversedlinkedlistsolution.Main" />
+        <item itemvalue="Application.algorithms.reversedlinkedlist.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -278,7 +290,10 @@
       <workItem from="1776758349993" duration="31000" />
       <workItem from="1776758406865" duration="6235000" />
       <workItem from="1776863439607" duration="3786000" />
-      <workItem from="1776931877583" duration="6738000" />
+      <workItem from="1776931877583" duration="11613000" />
+      <workItem from="1777025128204" duration="7592000" />
+      <workItem from="1777272675532" duration="66000" />
+      <workItem from="1777286014356" duration="3516000" />
     </task>
     <servers />
   </component>
@@ -295,11 +310,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/algorithms/backtracking/NQueens.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/algorithms/backtracking/NQueens.java</url>
           <line>20</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -307,11 +317,6 @@
           <url>file://$PROJECT_DIR$/src/main/java/algorithms/backtracking/NQueens.java</url>
           <line>38</line>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/algorithms/backtracking/TryBacktrack.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/searchandsort/SearchExamples.java</url>
@@ -327,6 +332,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/searchandsort/SortExamples.java</url>
           <line>98</line>
           <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/algorithms/reversedlinkedlistsolution/Main.java</url>
+          <line>14</line>
+          <option name="timeStamp" value="25" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
