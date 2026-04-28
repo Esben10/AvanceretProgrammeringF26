@@ -5,21 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a9a5430-e83d-4879-8d5e-c9086862fc55" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/algorithms/greedy.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/algorithms/lazy.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/algorithms/backtracking.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/algorithms/backtracking_exercise.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/algorithms/bfs_dfs_exercise.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/algorithms/bfs_dfs_exercise.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/portfolio_exercises/algorithms/algorithms.md" beforeDir="false" afterPath="$PROJECT_DIR$/portfolio_exercises/algorithms/algorithms.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/backtracking/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/backtracking/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/backtracking/NQueens.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/backtracking/NQueens.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/backtracking/TryBacktrack.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/circularlinkedlist/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/circularlinkedlist/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/floydexample/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/floydexample/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/floydexample/TraversingArrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/floydexample/TraversingArrays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/algorithms/bfs_dfs_exercise.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/graphs/bfs_dfs_exercise.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/algorithms/graph_preparation.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/graphs/graph_preparation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/algorithms/lazy.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/algorithms/lazy.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/graphsearch/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphs/graphsearch/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/graphsearch/SearchStrategies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphs/graphsearch/SearchStrategies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/graphsearchcycles/CycleDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphs/graphsearchcycles/CycleDetector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/graphsearchcycles/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphs/graphsearchcycles/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/maze/MazeExercise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/maze/MazeExercise.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/reversedlinkedlist/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/algorithms/reversedlinkedlist/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/treesearch/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphs/treesearch/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/treesearch/SearchStrategies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphs/treesearch/SearchStrategies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/treesearchsolution/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphs/treesearchsolution/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/treesearchsolution/SearchStrategies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphs/treesearchsolution/SearchStrategies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/undirectedgraphs/CycleDetector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphs/undirectedgraphs/CycleDetector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/algorithms/undirectedgraphs/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphs/undirectedgraphs/Node.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,11 +115,11 @@
       <recent name="C:\Users\kong\OneDrive - EFIF\Dokumenter\Valgfag\AvanceretProgrammering\src\main\java\algorithms\circularlistsolution" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kong\OneDrive - Erhvervsakademi København\Dokumenter\Valgfag\Materialer\F26\AvanceretProgrammeringF26\docs\graphs" />
       <recent name="C:\Users\kong\OneDrive - Erhvervsakademi København\Dokumenter\Valgfag\Materialer\F26\AvanceretProgrammeringF26\docs\algorithms" />
       <recent name="C:\Users\kong\OneDrive - Erhvervsakademi København\Dokumenter\Valgfag\Materialer\F26\AvanceretProgrammeringF26\docs" />
       <recent name="C:\Users\kong\OneDrive - EFIF\Dokumenter\Valgfag\AvanceretProgrammering\docs\designpatterns" />
       <recent name="C:\Users\kong\OneDrive - EFIF\Dokumenter\Valgfag\AvanceretProgrammering\docs\searchandsort" />
-      <recent name="C:\Users\kong\OneDrive - EFIF\Dokumenter\Valgfag\AvanceretProgrammering\data" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -132,13 +132,26 @@
       <recent name="concurrency.executorexercise" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.SearchStrategies">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="algorithms.backtracking.Main" />
       <module name="AvanceretProgrammering" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="algorithms.backtracking.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SearchStrategies" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="graphs.graphsearch.SearchStrategies" />
+      <module name="AvanceretProgrammering" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="graphs.graphsearch.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -172,19 +185,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="algorithms.reversedlinkedlist.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="algorithms.reversedlinkedlist.Main" />
-      <module name="AvanceretProgrammering" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="algorithms.reversedlinkedlist.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="algorithms.reversedlinkedlistsolution.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="algorithms.reversedlinkedlistsolution.Main" />
       <module name="AvanceretProgrammering" />
@@ -199,19 +199,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.SearchStrategies" />
       <item itemvalue="Application.TryBacktrack" />
       <item itemvalue="Application.algorithms.floydexample.Main" />
-      <item itemvalue="Application.algorithms.reversedlinkedlist.Main" />
       <item itemvalue="Application.algorithms.reversedlinkedlistsolution.Main" />
       <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SearchStrategies" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.TryBacktrack" />
         <item itemvalue="Application.algorithms.floydexample.Main" />
         <item itemvalue="Application.algorithms.reversedlinkedlistsolution.Main" />
-        <item itemvalue="Application.algorithms.reversedlinkedlist.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -293,7 +293,8 @@
       <workItem from="1776931877583" duration="11613000" />
       <workItem from="1777025128204" duration="7592000" />
       <workItem from="1777272675532" duration="66000" />
-      <workItem from="1777286014356" duration="3516000" />
+      <workItem from="1777286014356" duration="7363000" />
+      <workItem from="1777373210260" duration="6083000" />
     </task>
     <servers />
   </component>

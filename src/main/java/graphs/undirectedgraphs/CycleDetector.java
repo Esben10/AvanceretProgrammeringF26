@@ -1,4 +1,4 @@
-package algorithms.undirectedgraphs;
+package graphs.undirectedgraphs;
 
 import java.util.HashSet;
 import java.util.Set;

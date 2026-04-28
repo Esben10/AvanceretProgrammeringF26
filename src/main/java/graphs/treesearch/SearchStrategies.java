@@ -1,7 +1,5 @@
-package algorithms.treesearch;
+package graphs.treesearch;
 
-
-import java.util.*;
 
 public class SearchStrategies {
 

@@ -1,6 +1,6 @@
 # Dovne beregninger
 
-Kig på koden i `algorithms.lazy.lazy.LazyCalculations`. Hvad sker der hvis vi kalder metoden `lazyFactorial(..)` med 5 som argument?
+Kig på koden i `algorithms.lazy.LazyCalculations`. Hvad sker der hvis vi kalder metoden `lazyFactorial(..)` med 5 som argument?
 Og hvad sker der, hvis vi efterfølgende kalder metoden med 3 som argument?
 
 Lav din egen metode `lazySum(int i)` som summerer tallene fra 1 - n.

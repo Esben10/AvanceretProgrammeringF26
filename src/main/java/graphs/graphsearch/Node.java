@@ -1,4 +1,4 @@
-package algorithms.graphsearchcycles;
+package graphs.graphsearch;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,14 +13,17 @@ public class Node {
     }
 
     public String getName() {
+
         return name;
     }
 
     public List<Node> getNeighbors() {
+
         return neighbors;
     }
 
     public void addNeighbor(Node neighbor) {
+
         neighbors.add(neighbor);
     }
 }

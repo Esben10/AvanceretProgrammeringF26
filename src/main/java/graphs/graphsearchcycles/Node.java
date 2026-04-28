@@ -1,4 +1,4 @@
-package algorithms.graphsearch;
+package graphs.graphsearchcycles;
 
 import java.util.ArrayList;
 import java.util.List;

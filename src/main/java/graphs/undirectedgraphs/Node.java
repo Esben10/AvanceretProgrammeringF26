@@ -1,4 +1,4 @@
-package algorithms.undirectedgraphs;
+package graphs.undirectedgraphs;
 
 import java.util.ArrayList;
 import java.util.List;
