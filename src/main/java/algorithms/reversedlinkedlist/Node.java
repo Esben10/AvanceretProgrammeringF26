@@ -1,11 +1,15 @@
 package algorithms.reversedlinkedlist;
 
-class Node {
-    int value;
-    Node next;
+public class Node {
+    public int value;
+    public Node next;
 
-    Node(int value) {
+    public Node(int value) {
         this.value = value;
     }
 
+    @Override
+    public String toString() {
+        return next == null ? String.valueOf(value) : value + " -> " + next;
+    }
 }

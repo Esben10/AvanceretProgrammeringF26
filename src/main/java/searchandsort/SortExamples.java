@@ -2,6 +2,7 @@ package searchandsort;
 
 import searchandsort.entities.Student;
 
+import java.security.spec.RSAOtherPrimeInfo;
 import java.util.*;
 
 public class SortExamples {
@@ -50,20 +51,93 @@ public class SortExamples {
         return i + 1;
     }
 
-    public static void mergeSort(List<Student> students) {
+    public static void recursiveCall(int i){
+        if(i < 1)
+            return;
+        i--;
+        System.out.println(i);
+        recursiveCall(i);
+    }
+
+    public static void mergeSort(Student[] students){
+        // Hvis der er 1 element tilbage kan vi ikke sortere mere
+        // Dette er metoden base case
+        if (students.length < 2)
+            return;
+        // Vi finder midten af students arrayet
+        int middle = students.length / 2;
+        // Vi laver to sub-arrays som hver er halvdelen af student-arrayet langt
+        Student[] lefthalf = new Student[middle];
+        Student[] righthalf = new Student[students.length - middle];
+
+        // Vi kopierer første halvdel af students arrayet ind i lefthalf
+        for(int i = 0; i < middle; i++){
+            lefthalf[i] = students[i];
+        }
+
+        // Og anden halvdel ind i righthalf
+        for(int i = middle; i < students.length; i++){
+            righthalf[i - middle] = students[i];
+        }
+
+        /*
+        Vi kunne erstatte forloops med
+        System.arraycopy(students, 0, lefthalf, 0, middle);
+        System.arraycopy(students, middle, righthalf, 0, students.length - middle);
+         */
+
+        // Vi kalder metoden rekursivt med de to arrays
+        mergeSort(lefthalf);
+        mergeSort(righthalf);
+
+        // Vi merger de to sorterede halvdele
+        merge(students, lefthalf, righthalf);
+    }
+
+    private static void merge(Student[] input, Student[] left, Student[] right){
+        // Tre hjælpevariable der skal bruges som pointere i hver deres array
+        int i = 0, l = 0, r = 0;
+        // Så længe der er elementer i både venstre og højre array, som ikke er
+        // kopieret til input-array, så fortsætter vi sortering
+        while (l < left.length && r < right.length){
+            if (left[l].getId() <= right[r].getId()){
+                input[i] = left[l];
+                l++;
+                i++;
+            } else {
+                input[i] = right[r];
+                r++;
+                i++;
+            }
+        }
+        // Når der ikke er flere elementer i enten left eller right, lægges de
+        // resterende elementer i input
+        while(l < left.length){
+            input[i] = left[l];
+            l++;
+            i++;
+        }
+        while(r < right.length){
+            input[i] = right[r];
+            r++;
+            i++;
+        }
+    }
+
+    public static void mergeSortList(List<Student> students) {
         if (students.size() > 1) {
             int mid = students.size() / 2;
             List<Student> left = new ArrayList<>(students.subList(0, mid));
             List<Student> right = new ArrayList<>(students.subList(mid, students.size()));
 
-            mergeSort(left);
-            mergeSort(right);
+            mergeSortList(left);
+            mergeSortList(right);
 
-            merge(students, left, right);
+            mergeList(students, left, right);
         }
     }
 
-    private static void merge(List<Student> students, List<Student> left, List<Student> right) {
+    private static void mergeList(List<Student> students, List<Student> left, List<Student> right) {
         int i = 0, j = 0, k = 0;
         while (i < left.size() && j < right.size()) {
             if (left.get(i).getId() <= right.get(j).getId()) {

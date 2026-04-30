@@ -8,9 +8,19 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-         testComplexity();
-       // testLinearAndBinarySearch();
-       // testSort();
+        //  testComplexity();
+        // testLinearAndBinarySearch();
+        // testBubble(10, true, true);
+        //  testMerge(10, true, true);
+        //testQuick(50000, true,true);
+        testLinkedListExercises();  // Uncomment to test exercises 1-4
+      /*  Student[] arr = createCardArray();
+       printArray("Før sortering", arr);
+       List<Student> cards = Arrays.asList(arr); */
+        // SortExamples.quickSort(cards, 0, cards.size()-1);
+        // SortExamples.mergeSort(arr);
+        // printArray("Efter sortering", arr);
+        //SortExamples.recursiveCall(10);
 
     }
 
@@ -58,7 +68,12 @@ public class Main {
 
         // Sorter listen efter ID (nødvendigt for binær søgning)
         // Hvad sorteres de studerende efter? Hvordan finder vi ud af det?
-        Collections.sort(students);
+        Collections.sort(students, new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return o1.getName().compareTo(o2.getName());
+            }
+        });
 
         // Binær søgning
         start = System.currentTimeMillis();
@@ -68,44 +83,239 @@ public class Main {
         System.out.println("Tid: " + (stop - start) + " ms");
     }
 
-    private static void testSort() {
-        List<Student> original = new ArrayList<>();
-        Factory.fillWithStudents(original, 100000); // eller fx 10_000 til hurtigere test
-      //  Collections.shuffle(original);
-
-        // Bubble Sort (langsom)
-        List<Student> bubbleList = new ArrayList<>(original);
+    private static void testBubble(int size, boolean time, boolean print) {
+        List<Student> list = new ArrayList<>();
+        Factory.fillWithStudents(list, size);
+        Collections.shuffle(list);
+        if (print) printList("Bubble Sort - før", list);
         long start = System.currentTimeMillis();
-     //   SortExamples.bubbleSort(bubbleList);
+        SortExamples.bubbleSort(list);
         long stop = System.currentTimeMillis();
-        System.out.println("Bubble Sort - tid: " + (stop - start) + " ms");
-
-        // Heap Sort
-        List<Student> heapList = new ArrayList<>(original);
-        start = System.currentTimeMillis();
-        SortExamples.heapSort(heapList);
-        stop = System.currentTimeMillis();
-        System.out.println("Heap Sort - tid: " + (stop - start) + " ms");
-
-        // Quick Sort
-        List<Student> quickList = new ArrayList<>(original);
-        start = System.currentTimeMillis();
-        SortExamples.quickSort(quickList, 0, quickList.size() - 1);
-        stop = System.currentTimeMillis();
-        System.out.println("Quick Sort - tid: " + (stop - start) + " ms");
-
-        // Merge Sort
-        List<Student> mergeList = new ArrayList<>(original);
-        start = System.currentTimeMillis();
-        SortExamples.mergeSort(mergeList);
-        stop = System.currentTimeMillis();
-        System.out.println("Merge Sort - tid: " + (stop - start) + " ms");
+        if (print) printList("Bubble Sort - efter", list);
+        if (time) System.out.println("Bubble Sort - tid: " + (stop - start) + " ms");
     }
 
+    private static void testHeap(int size, boolean time, boolean print) {
+        List<Student> list = new ArrayList<>();
+        Factory.fillWithStudents(list, size);
+        Collections.shuffle(list);
+        if (print) printList("Heap Sort - før", list);
+        long start = System.currentTimeMillis();
+        SortExamples.heapSort(list);
+        long stop = System.currentTimeMillis();
+        if (print) printList("Heap Sort - efter", list);
+        if (time) System.out.println("Heap Sort - tid: " + (stop - start) + " ms");
+    }
 
+    private static void testQuick(int size, boolean time, boolean print) {
+        List<Student> list = new ArrayList<>();
+        Factory.fillWithStudents(list, size);
+        //Collections.shuffle(list);
+        if (print) printList("Quick Sort - før", list);
+        long start = System.currentTimeMillis();
+        SortExamples.quickSort(list, 0, list.size() - 1);
+        long stop = System.currentTimeMillis();
+        if (print) printList("Quick Sort - efter", list);
+        if (time) System.out.println("Quick Sort - tid: " + (stop - start) + " ms");
+    }
 
+    private static void testMerge(int size, boolean time, boolean print) {
+        List<Student> original = new ArrayList<>();
+        Factory.fillWithStudents(original, size);
+        Collections.shuffle(original);
+        Student[] mergearray = original.toArray(new Student[0]);
+        if (print) printArray("Merge Sort - før", mergearray);
+        long start = System.currentTimeMillis();
+        SortExamples.mergeSort(mergearray);
+        long stop = System.currentTimeMillis();
+        if (print) printArray("Merge Sort - efter", mergearray);
+        if (time) System.out.println("Merge Sort - tid: " + (stop - start) + " ms");
+    }
 
+    // Hjælpemetoder til udskrift
+    private static void printList(String label, List<Student> list) {
+        System.out.println(label + ": ");
+        for(Student s:list){
+            System.out.println(s);
+        }
+    }
 
+    private static void printArray(String label, Student[] arr) {
+        System.out.println(label + ": ");
+        for(Student s:arr){
+            System.out.println(s);
+        }
+    }
 
+    private static Student[] createCardArray(){
+        Student[] arr = new Student[6];
+        arr[0] =  new Student("Tre", 3);
+        arr[1] = new Student("Ni", 9);
+        arr[2] = new Student("Syv", 7);
+        arr[3] = new Student("10", 10);
+        arr[4] = new Student("Dronning", 12);
+        arr[5] = new Student("Fire", 4);
+        return arr;
+    }
+
+    // ==================== EXERCISE 2: Reverse Linked List ====================
+    
+    /**
+     * Exercise 2: Reverser listen
+     * Reverserer en linked list ved at få hver node til at pege på sin foregående node
+     * 
+     * Pseudokode:
+     * 1. previous = null
+     * 2. current = head
+     * 3. While current != null:
+     *    a. Save next node (current.next)
+     *    b. Make current point to previous (reverse the link)
+     *    c. Move previous forward to current
+     *    d. Move current forward to the saved next
+     * 4. Return previous (new head)
+     */
+    public static algorithms.reversedlinkedlist.Node reverseList(algorithms.reversedlinkedlist.Node head) {
+        algorithms.reversedlinkedlist.Node previous = null;
+        algorithms.reversedlinkedlist.Node current = head;
+        
+        while (current != null) {
+            // Save the next node before we change the link
+            algorithms.reversedlinkedlist.Node next = current.next;
+            
+            // Reverse the link - point current to the previous node
+            current.next = previous;
+            
+            // Move forward: previous becomes current
+            previous = current;
+            
+            // Move current to the next node
+            current = next;
+        }
+        
+        // previous is now the new head of the reversed list
+        return previous;
+    }
+
+    // ==================== EXERCISE 4: Cycle Detector ====================
+    
+    /**
+     * Exercise 4: Lav en cycle detector
+     * Detekterer om en linked list har en cyklus ved hjælp af Floyd's cycle detection algorithm
+     * (Tortoise and Hare)
+     * 
+     * Algoritme:
+     * 1. Brug to pointere: slow (bevæger sig 1 skridt) og fast (bevæger sig 2 skridt)
+     * 2. Hvis de mødes, er der en cyklus
+     * 3. Hvis fast når enden (null), er der ingen cyklus
+     */
+    public static boolean hasCycle(algorithms.reversedlinkedlist.Node head) {
+        if (head == null || head.next == null) {
+            return false;
+        }
+        
+        algorithms.reversedlinkedlist.Node slow = head;
+        algorithms.reversedlinkedlist.Node fast = head;
+        
+        // Bevæg pointerne mens fast ikke når enden
+        while (fast != null && fast.next != null) {
+            // slow bevæger sig 1 skridt
+            slow = slow.next;
+            
+            // fast bevæger sig 2 skridt
+            fast = fast.next.next;
+            
+            // Tjek om de mødes - hvis ja, er der en cyklus
+            if (slow == fast) {
+                return true;
+            }
+        }
+        
+        // fast nåede enden uden at møde slow, så ingen cyklus
+        return false;
+    }
+
+    // ==================== TEST METHOD ====================
+    
+    /**
+     * Test method for exercises 1-4
+     * Kald denne metode fra main() for at teste reversering og cycle detection
+     */
+    public static void testLinkedListExercises() {
+        System.out.println("======== EXERCISE 1 & 2: Reversed Linked List ========\n");
+        
+        // Opret en normal liste: 1 -> 5 -> 7 -> 12 -> 17 -> null
+        algorithms.reversedlinkedlist.Node list = 
+            algorithms.reversedlinkedlist.ListFactory.buildList(1, 5, 7, 12, 17);
+        
+        System.out.println("Original liste:");
+        printReversedLinkedList(list);
+        
+        // Reverser listen
+        algorithms.reversedlinkedlist.Node reversed = reverseList(list);
+        
+        System.out.println("\nReversearet liste:");
+        printReversedLinkedList(reversed);
+        
+        System.out.println("\n======== EXERCISE 3 & 4: Circular Linked List ========\n");
+        
+        // Test normal liste (uden cyklus)
+        algorithms.circularlinkedlist.Node normalList = 
+            algorithms.circularlinkedlist.ListFactory.buildList(1, 2, 3, 4, 5);
+        
+        System.out.println("Normal liste (uden cyklus): " + normalList);
+        System.out.println("Har cyklus? " + hasCycleCircular(normalList) + " (forventet: false)");
+        
+        // Test cirkulær liste (med cyklus)
+        algorithms.circularlinkedlist.Node circularList = 
+            algorithms.circularlinkedlist.ListFactory.buildListWithCycle();
+        
+        System.out.println("\nCirkulær liste (1->2->3->4->5->2->...)");
+        // Vi printer ikke hele den cirkulære liste da den ville være uendelig!
+        System.out.println("Har cyklus? " + hasCycleCircular(circularList) + " (forventet: true)");
+        
+        System.out.println("\n======== BONUS: Floyd's Array Example ========\n");
+        System.out.println("Array: {2, 0, 1}");
+        System.out.println("Har cyklus? " + algorithms.floydexample.TraversingArrays.hasCycle(new int[]{2, 0, 1}));
+        System.out.println("Forklaring: Hvis vi følger indekserne som 'next pointers':");
+        System.out.println("  Start: index 0 -> arr[0]=2 -> arr[2]=1 -> arr[1]=0 -> (tilbage til 0)");
+        System.out.println("  Dette danner en cyklus: 0->2->1->0->..., så der returneres true");
+    }
+    
+    /**
+     * Hjælpemetode til at printe en reversedlinkedlist.Node liste
+     */
+    private static void printReversedLinkedList(algorithms.reversedlinkedlist.Node node) {
+        StringBuilder sb = new StringBuilder();
+        algorithms.reversedlinkedlist.Node current = node;
+        while (current != null) {
+            sb.append(current.value).append(" -> ");
+            current = current.next;
+        }
+        sb.append("null");
+        System.out.println(sb.toString());
+    }
+    
+    /**
+     * Hjælpemetode til cycle detection på circularlinkedlist.Node
+     */
+    private static boolean hasCycleCircular(algorithms.circularlinkedlist.Node head) {
+        if (head == null || head.next == null) {
+            return false;
+        }
+        
+        algorithms.circularlinkedlist.Node slow = head;
+        algorithms.circularlinkedlist.Node fast = head;
+        
+        while (fast != null && fast.next != null) {
+            slow = slow.next;
+            fast = fast.next.next;
+            
+            if (slow == fast) {
+                return true;
+            }
+        }
+        
+        return false;
+    }
 
 }
