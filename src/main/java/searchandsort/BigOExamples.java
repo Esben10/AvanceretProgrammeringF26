@@ -2,7 +2,7 @@ package searchandsort;
 
 public class BigOExamples {
     public static void main(String[] args) {
-        int n = 100000; // Juster n for at se effekten
+        int n = 100; // Juster n for at se effekten
         System.out.println("O(1) - Konstant tid:");
         constantTime(n);
 

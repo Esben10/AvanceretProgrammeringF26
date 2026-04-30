@@ -4,7 +4,7 @@ package algorithms.reversedlinkedlist;
 public class Main {
 
     public static void main(String[] args) {
-        Node head = ListFactory.buildList(1, 2, 3, 4, 5);
+        Node head = ListFactory.buildList(1, 5, 7, 12, 17);
         System.out.println("LinkedList: " + head);
         head = reverseList(head);
         System.out.println("LinkedList reversed: " + head);

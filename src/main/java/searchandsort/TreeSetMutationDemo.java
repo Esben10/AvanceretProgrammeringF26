@@ -41,12 +41,16 @@ public class TreeSetMutationDemo {
         System.out.println("Før ændring:");
         students.forEach(System.out::println);
 
-        // Tilføj en ny student med id=1, som Alice oprindeligt havde
+
         Student charlie = new Student("Charlie", 3);
         students.add(charlie);
 
         System.out.println("\nEfter tilføjelse af Charlie (id=3):");
         students.forEach(System.out::println);
+
+        boolean b =students.add(new Student("Dora", 3));
+      //  students.forEach(System.out::println);
+        System.out.println("Dora blev sat ind? " + b);
 
         // Ændr id på Alice, så det bliver "forkert"
         alice.setId(3);
@@ -59,5 +63,8 @@ public class TreeSetMutationDemo {
         students.forEach(System.out::println);
 
         System.out.println("Findes Alice? " + students.contains(alice));
+
+
     }
+
 }

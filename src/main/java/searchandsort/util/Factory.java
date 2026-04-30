@@ -30,7 +30,8 @@ public class Factory {
 
     public static void fillWithStudents(Collection<Student> collection, int amount){
         for(int i = 0; i < amount; i++){
-            collection.add(new Student(studentNames.get(i % studentNames.size()), i));
+            Random random = new Random();
+            collection.add(new Student(studentNames.get(random.nextInt(studentNames.size())), i));
         }
     }
 
