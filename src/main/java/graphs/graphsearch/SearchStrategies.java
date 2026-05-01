@@ -17,7 +17,7 @@ public class SearchStrategies {
         A.addNeighbor(D);
         C.addNeighbor(E);
         // Hvad sker der hvis vi lader E have A som nabo?
-       // E.addNeighbor(A);
+        E.addNeighbor(A);
 
         System.out.println("BFS starting...");
         Node foundBFS = searchBFS("F", A);

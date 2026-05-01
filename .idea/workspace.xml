@@ -5,6 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a9a5430-e83d-4879-8d5e-c9086862fc55" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/graphs/dijkstra_preparation.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/graphs/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/graphs/img_1.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/graphs/graphsearch/SearchStrategies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphs/graphsearch/SearchStrategies.java" afterDir="false" />
     </list>
@@ -120,7 +123,7 @@
       <recent name="concurrency.executorexercise" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.graphs.undirectedgraphs.Main">
+  <component name="RunManager" selected="Application.SearchStrategies">
     <configuration name="CycleDetector" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="graphs.graphsearchcycles.CycleDetector" />
       <module name="AvanceretProgrammering" />
@@ -195,9 +198,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SearchStrategies" />
         <item itemvalue="Application.graphs.undirectedgraphs.Main" />
         <item itemvalue="Application.CycleDetector" />
-        <item itemvalue="Application.SearchStrategies" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.TryBacktrack" />
       </list>
@@ -284,7 +287,8 @@
       <workItem from="1777286014356" duration="7363000" />
       <workItem from="1777373210260" duration="6083000" />
       <workItem from="1777444539270" duration="7643000" />
-      <workItem from="1777544856146" duration="2630000" />
+      <workItem from="1777544856146" duration="7289000" />
+      <workItem from="1777619259123" duration="1492000" />
     </task>
     <servers />
   </component>
