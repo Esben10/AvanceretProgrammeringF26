@@ -5,11 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a9a5430-e83d-4879-8d5e-c9086862fc55" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/docs/graphs/dijkstra_preparation.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/graphs/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docs/graphs/img_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/portfolio_exercises/graphs/Djikstra.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/graphs/dijkstra/Dijkstra.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/graphs/dijkstra/WeightedNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/graphs/graphsearch/SearchStrategies.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/graphs/graphsearch/SearchStrategies.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio_exercises/designpatterns/AdapterPattern.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/designpatterns/AdapterPattern.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio_exercises/designpatterns/BuilderPattern.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/designpatterns/BuilderPattern.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio_exercises/designpatterns/Cases.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/designpatterns/Cases.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio_exercises/designpatterns/Cheat sheet til cases.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/designpatterns/Cheat sheet til cases.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio_exercises/designpatterns/CommandPattern.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/designpatterns/CommandPattern.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio_exercises/designpatterns/CompositePattern.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/designpatterns/CompositePattern.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio_exercises/designpatterns/DecoratorPattern.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/designpatterns/DecoratorPattern.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio_exercises/designpatterns/FactoryPattern.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/designpatterns/FactoryPattern.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio_exercises/designpatterns/Guide.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/designpatterns/Guide.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio_exercises/designpatterns/Kategorisering.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/designpatterns/Kategorisering.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio_exercises/designpatterns/ObserverPattern.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/designpatterns/ObserverPattern.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio_exercises/designpatterns/Oversigt.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/designpatterns/Oversigt.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio_exercises/designpatterns/ProxyPattern.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/designpatterns/ProxyPattern.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio_exercises/designpatterns/SingletonPattern.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/designpatterns/SingletonPattern.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio_exercises/designpatterns/StrategyPattern.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/designpatterns/StrategyPattern.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/portfolio_exercises/designpatterns/designpatterns_exercises.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/designpatterns/designpatterns_exercises.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,11 +121,11 @@
       <recent name="C:\Users\kong\OneDrive - EFIF\Dokumenter\Valgfag\AvanceretProgrammering\src\main\java\algorithms\circularlistsolution" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kong\OneDrive - Erhvervsakademi København\Dokumenter\Valgfag\Materialer\F26\AvanceretProgrammeringF26\docs\designpatterns" />
       <recent name="C:\Users\kong\OneDrive - Erhvervsakademi København\Dokumenter\Valgfag\Materialer\F26\AvanceretProgrammeringF26\docs\graphs" />
       <recent name="C:\Users\kong\OneDrive - Erhvervsakademi København\Dokumenter\Valgfag\Materialer\F26\AvanceretProgrammeringF26\docs\algorithms" />
       <recent name="C:\Users\kong\OneDrive - Erhvervsakademi København\Dokumenter\Valgfag\Materialer\F26\AvanceretProgrammeringF26\docs" />
       <recent name="C:\Users\kong\OneDrive - EFIF\Dokumenter\Valgfag\AvanceretProgrammering\docs\designpatterns" />
-      <recent name="C:\Users\kong\OneDrive - EFIF\Dokumenter\Valgfag\AvanceretProgrammering\docs\searchandsort" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
@@ -288,7 +303,7 @@
       <workItem from="1777373210260" duration="6083000" />
       <workItem from="1777444539270" duration="7643000" />
       <workItem from="1777544856146" duration="7289000" />
-      <workItem from="1777619259123" duration="1492000" />
+      <workItem from="1777619259123" duration="7389000" />
     </task>
     <servers />
   </component>
