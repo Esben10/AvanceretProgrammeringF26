@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="UTF-8">
+<title>A* — Labyrint</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #1a1a2e;
+    color: #eee;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  h1 { font-size: 1.4rem; margin-bottom: 6px; color: #ffd166; letter-spacing: 2px; }
+  p.sub { font-size: 0.75rem; color: #666; margin-bottom: 16px; }
+  canvas { border-radius: 8px; background: #0f0f1e; display: block; }
+  #controls {
+    margin-top: 14px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+  }
+  button {
+    background: #ffd16622;
+    border: 1px solid #ffd16655;
+    color: #ffd166;
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 0.85rem;
+    transition: background 0.2s;
+  }
+  button:hover { background: #ffd16644; }
+  #speed-wrap { font-size: 0.75rem; color: #666; display: flex; align-items: center; gap: 8px; }
+  input[type=range] { accent-color: #ffd166; }
+  #info { margin-top: 10px; font-size: 0.75rem; color: #888; height: 20px; }
+  #heuristic { margin-top: 6px; font-size: 0.72rem; color: #ffd16688; height: 16px; }
+</style>
+</head>
+<body>
+<h1>A* — LABYRINT</h1>
+<p class="sub">Bemærk hvordan A* styrer mod målet med heuristikken (Manhattan-afstand)</p>
+<canvas id="c"></canvas>
+<div id="controls">
+  <button id="btn">▶ Start</button>
+  <button id="reset">↺ Reset</button>
+  <div id="speed-wrap">Hastighed: <input type="range" id="speed" min="1" max="10" value="5"></div>
+</div>
+<div id="info"></div>
+<div id="heuristic"></div>
+
+<script>
+const ROWS = 12, COLS = 12, CELL = 44;
+const canvas = document.getElementById('c');
+canvas.width = COLS * CELL;
+canvas.height = ROWS * CELL;
+const ctx = canvas.getContext('2d');
+
+const grid = [
+  [0,0,0,1,0,0,0,1,0,0,0,0],
+  [1,1,0,1,0,1,0,1,0,1,1,0],
+  [0,0,0,0,0,1,0,0,0,0,1,0],
+  [0,1,1,1,1,1,1,1,1,1,1,0],
+  [0,0,0,0,0,0,0,0,1,0,0,0],
+  [1,1,1,0,1,1,1,0,1,1,0,1],
+  [0,0,0,0,0,0,1,0,0,0,0,0],
+  [0,1,1,1,1,0,1,1,1,1,1,0],
+  [0,0,0,0,1,0,0,0,0,0,1,0],
+  [1,1,0,1,1,0,1,1,0,1,1,0],
+  [0,0,0,0,0,0,1,0,0,0,1,0],
+  [0,1,1,1,0,1,1,0,1,1,0,0],
+];
+
+const START = [0,0], GOAL = [11,11];
+
+let state = {};
+let steps = [];
+let stepIdx = 0;
+let animTimer = null;
+let running = false;
+let finalPath = [];
+
+function key(r,c) { return r+','+c; }
+function heuristic(r,c) { return Math.abs(GOAL[0]-r) + Math.abs(GOAL[1]-c); }
+
+function buildSteps() {
+  steps = [];
+  finalPath = [];
+
+  const gCost = {};
+  const prev = {};
+  const visited = new Set();
+  for (let r=0;r<ROWS;r++) for (let c=0;c<COLS;c++) gCost[key(r,c)] = Infinity;
+  gCost[key(...START)] = 0;
+
+  // [f, g, r, c]
+  const queue = [[heuristic(...START), 0, START[0], START[1]]];
+
+  while (queue.length > 0) {
+    queue.sort((a,b) => a[0]-b[0]);
+    const [f, g, r, c] = queue.shift();
+    const k = key(r,c);
+    if (visited.has(k)) continue;
+    visited.add(k);
+    steps.push({ type: 'visit', r, c, g, h: heuristic(r,c), f });
+    if (r === GOAL[0] && c === GOAL[1]) break;
+
+    for (const [dr,dc] of [[-1,0],[1,0],[0,-1],[0,1]]) {
+      const nr=r+dr, nc=c+dc;
+      if (nr<0||nr>=ROWS||nc<0||nc>=COLS) continue;
+      if (grid[nr][nc]===1) continue;
+      if (visited.has(key(nr,nc))) continue;
+      const ng = g + 1;
+      if (ng < gCost[key(nr,nc)]) {
+        gCost[key(nr,nc)] = ng;
+        prev[key(nr,nc)] = key(r,c);
+        const nf = ng + heuristic(nr,nc);
+        queue.push([nf, ng, nr, nc]);
+        steps.push({ type: 'queue', r: nr, c: nc, g: ng, h: heuristic(nr,nc), f: nf });
+      }
+    }
+  }
+
+  // Reconstruct path
+  let cur = key(...GOAL);
+  while (cur) {
+    const [r,c] = cur.split(',').map(Number);
+    finalPath.unshift([r,c]);
+    cur = prev[cur];
+  }
+  steps.push({ type: 'done', path: finalPath });
+}
+
+function resetState() {
+  state = {};
+  for (let r=0;r<ROWS;r++) for (let c=0;c<COLS;c++) state[key(r,c)] = 'unvisited';
+}
+
+function draw() {
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  const done = steps[stepIdx-1]?.type === 'done';
+
+  for (let r=0;r<ROWS;r++) {
+    for (let c=0;c<COLS;c++) {
+      const x=c*CELL, y=r*CELL;
+      const k = key(r,c);
+      const isStart = r===START[0]&&c===START[1];
+      const isGoal = r===GOAL[0]&&c===GOAL[1];
+      const onPath = done && finalPath.some(([pr,pc])=>pr===r&&pc===c);
+
+      if (grid[r][c]===1) {
+        ctx.fillStyle = '#08081a';
+        ctx.fillRect(x,y,CELL,CELL);
+      } else if (isStart) {
+        ctx.fillStyle = '#1D9E75';
+        ctx.fillRect(x,y,CELL,CELL);
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 13px Courier New';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('S', x+CELL/2, y+CELL/2);
+      } else if (isGoal) {
+        ctx.fillStyle = '#D85A30';
+        ctx.fillRect(x,y,CELL,CELL);
+        ctx.fillStyle = '#fff';
+        ctx.font = 'bold 13px Courier New';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText('M', x+CELL/2, y+CELL/2);
+      } else if (onPath) {
+        ctx.fillStyle = '#ffd16644';
+        ctx.fillRect(x,y,CELL,CELL);
+        ctx.strokeStyle = '#ffd166';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(x+1,y+1,CELL-2,CELL-2);
+      } else if (state[k] === 'visited') {
+        ctx.fillStyle = '#5de09522';
+        ctx.fillRect(x,y,CELL,CELL);
+        ctx.strokeStyle = '#5de09544';
+        ctx.lineWidth = 1;
+        ctx.strokeRect(x,y,CELL,CELL);
+      } else if (state[k] === 'queued') {
+        ctx.fillStyle = '#ffd16611';
+        ctx.fillRect(x,y,CELL,CELL);
+        ctx.strokeStyle = '#ffd16633';
+        ctx.lineWidth = 1;
+        ctx.strokeRect(x,y,CELL,CELL);
+      } else {
+        ctx.fillStyle = '#2a2a4a';
+        ctx.fillRect(x,y,CELL,CELL);
+        ctx.strokeStyle = '#ffffff15';
+        ctx.lineWidth = 1;
+        ctx.strokeRect(x,y,CELL,CELL);
+      }
+    }
+  }
+}
+
+function applyStep(s) {
+  if (s.type === 'visit') {
+    state[key(s.r, s.c)] = 'visited';
+    document.getElementById('info').textContent = `Besøger (${s.r},${s.c}) — g=${s.g}, h=${s.h}, f=${s.f}`;
+    document.getElementById('heuristic').textContent = `Manhattan til mål: ${s.h} skridt`;
+  } else if (s.type === 'queue') {
+    if (state[key(s.r,s.c)] !== 'visited') state[key(s.r,s.c)] = 'queued';
+    document.getElementById('info').textContent = `→ Kø: (${s.r},${s.c}) — g=${s.g} + h=${s.h} = f=${s.f}`;
+    document.getElementById('heuristic').textContent = ``;
+  } else if (s.type === 'done') {
+    document.getElementById('info').textContent = `★ Korteste vej fundet! Længde: ${finalPath.length-1} skridt`;
+    document.getElementById('heuristic').textContent = ``;
+  }
+}
+
+function runNext() {
+  if (stepIdx >= steps.length) {
+    running = false;
+    document.getElementById('btn').textContent = '✓ Færdig';
+    return;
+  }
+  applyStep(steps[stepIdx]);
+  stepIdx++;
+  draw();
+  const delay = 1100 - document.getElementById('speed').value * 100;
+  animTimer = setTimeout(runNext, delay);
+}
+
+document.getElementById('btn').addEventListener('click', () => {
+  if (!running) {
+    running = true;
+    document.getElementById('btn').textContent = '⏸ Kører...';
+    runNext();
+  }
+});
+
+document.getElementById('reset').addEventListener('click', () => {
+  clearTimeout(animTimer);
+  running = false;
+  stepIdx = 0;
+  finalPath = [];
+  document.getElementById('btn').textContent = '▶ Start';
+  document.getElementById('info').textContent = '';
+  document.getElementById('heuristic').textContent = '';
+  resetState();
+  buildSteps();
+  draw();
+});
+
+buildSteps();
+resetState();
+draw();
+</script>
+</body>
+</html>
