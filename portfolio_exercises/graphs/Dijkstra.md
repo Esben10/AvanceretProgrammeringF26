@@ -1,16 +1,16 @@
 ## Portfolioopgave: Dijkstra
 
-Lav en implementering af Dijkstras algoritme der finder den korteste vej mellem byer i et vejnet.
+Lav en implementering af Dijkstras algoritme, der finder den korteste vej mellem byer i et vejnet.
 
 - Design selv dit vejnet med mindst 8 byer og vægtede rettede veje
 - Find den korteste vej fra én by til en anden
 - Lav en visualisering der giver mening. Hvad er nyttigt at se når man skal forstå algoritmen?
 
-Du kan finde inspiration i koden i `graphs.dijkstra`.
+Du kan finde inspiration til koden i `graphs.dijkstra`.
 
 ### Visualisering
 
-Tænk over hvad der er meningsfuldt at vise for at forklare nogen hvordan Djikstra virker. Nogle muligheder:
+Tænk over hvad der er meningsfuldt at vise for at forklare nogen hvordan Dijkstra virker. Nogle muligheder:
 
 - Print i konsollen hvad der sker i hvert trin, fx "Afstanden fra Skovby til Lilleby er nu 13 km" eller "Lilleby er nu visited". 
 Lav evt. tabeller over hvad der er i kø og/eller i visited. 

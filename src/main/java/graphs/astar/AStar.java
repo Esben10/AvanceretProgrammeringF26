@@ -1,24 +1,25 @@
-package graphs.dijkstra;
+package graphs.astar;
+
 
 import java.util.*;
 
-public class Dijkstra {
+public class AStar {
 
     public static void main(String[] args) {
-        WeightedNode S = new WeightedNode("S");
-        WeightedNode A = new WeightedNode("A");
-        WeightedNode B = new WeightedNode("B");
-        WeightedNode C = new WeightedNode("C");
-        WeightedNode D = new WeightedNode("D");
-        WeightedNode E = new WeightedNode("E");
-        WeightedNode F = new WeightedNode("F");
-        WeightedNode G = new WeightedNode("G");
-        WeightedNode H = new WeightedNode("H");
-        WeightedNode I = new WeightedNode("I");
-        WeightedNode J = new WeightedNode("J");
-        WeightedNode K = new WeightedNode("K");
-        WeightedNode L = new WeightedNode("L");
-        WeightedNode M = new WeightedNode("M");
+        WeightedNode S = new WeightedNode("S", 0, 0);
+        WeightedNode A = new WeightedNode("A", 0, 1);
+        WeightedNode B = new WeightedNode("B", 1, 0);
+        WeightedNode C = new WeightedNode("C", 0, 2);
+        WeightedNode D = new WeightedNode("D", 1, 1);
+        WeightedNode E = new WeightedNode("E", 1, 2);
+        WeightedNode F = new WeightedNode("F", 2, 0);
+        WeightedNode G = new WeightedNode("G", 0, 3);
+        WeightedNode H = new WeightedNode("H", 1, 3);
+        WeightedNode I = new WeightedNode("I", 2, 2);
+        WeightedNode J = new WeightedNode("J", 0, 4);
+        WeightedNode K = new WeightedNode("K", 1, 4);
+        WeightedNode L = new WeightedNode("L", 2, 3);
+        WeightedNode M = new WeightedNode("M", 2, 4);
 
         S.addNeighbor(A, 1);
         S.addNeighbor(B, 3);
@@ -45,22 +46,27 @@ public class Dijkstra {
         findShortestPath(S, M);
     }
 
+    // Manhattan-afstand som heuristik
+    private static int heuristic(WeightedNode node, WeightedNode destination) {
+        return Math.abs(destination.getRow() - node.getRow())
+                + Math.abs(destination.getCol() - node.getCol());
+    }
 
     public static void findShortestPath(WeightedNode source, WeightedNode destination) {
         // En node og den node vi kom fra. Skal bruges til at printe vejen fra start til slut
         Map<WeightedNode, WeightedNode> prev = new HashMap<>();
 
-        // Gemmer den billigste kendte dist til hver node
+        // Gemmer den billigste kendte g(n) til hver node
         Map<WeightedNode, Integer> dist = new HashMap<>();
 
         // Noder vi har besøgt og ikke skal afsøge igen
         Set<WeightedNode> visited = new HashSet<>();
 
-        // Køen sorterer selv efter dist fordi NodeWithDist implementerer Comparable
+        // Køen sorterer selv efter f(n) = g(n) + h(n) fordi NodeWithDist implementerer Comparable
         PriorityQueue<NodeWithDist> queue = new PriorityQueue<>();
 
         // Startnoden er 0 væk fra sig selv
-        queue.add(new NodeWithDist(source, 0));
+        queue.add(new NodeWithDist(source, 0, heuristic(source, destination)));
         dist.put(source, 0);
 
         while (!queue.isEmpty()) {
@@ -84,19 +90,15 @@ public class Dijkstra {
                 // Hvis det er en node vi før har besøgt, går vi til næste iteration
                 if (visited.contains(next)) continue;
 
-                // Currents afstand til startnode + currents afstand til nabo
-                int newDist = current.dist + weight;
+                // g(n): currents afstand til startnode + currents afstand til nabo
+                int newDist = current.gCost + weight;
 
                 // Opdater kun hvis vi har fundet en billigere vej
                 if (newDist < dist.getOrDefault(next, Integer.MAX_VALUE)) {
                     dist.put(next, newDist);
                     prev.put(next, current.node);
-                    // Vi putter en ny NodeWithDist i køen i stedet for at opdatere den eksisterende.
-                    // Ideelt ville vi tjekke om noden allerede er i køen og opdatere dens dist,
-                    // men Java's PriorityQueue understøtter ikke det effektivt (contains() og remove() er O(n)).
-                    // I stedet bruger vi dist-mappet til at undgå at putte en dårligere vej i køen overhovedet.
-                    // Hvis en forældet NodeWithDist alligevel popper ud, fanger visited-tjekket den.
-                    queue.add(new NodeWithDist(next, newDist));
+                    // f(n) = g(n) + h(n)
+                    queue.add(new NodeWithDist(next, newDist, heuristic(next, destination)));
                 }
             }
         }
@@ -113,22 +115,25 @@ public class Dijkstra {
         System.out.println("Samlet dist: " + dist.get(destination));
     }
 
-    // Hjælpeklasse der pakker en node og dens afstand fra startnoden sammen
-    // så køen selv kan sortere uden at slå op i et separat dist-map
-    // Vi kan ikke bare have dist som attribut på WeighedNode fordi det der kunne være flere algoritmer
-    // der kørte samtidig med forskellige startnoder og dermed forskellige distancer
+    // Hjælpeklasse der pakker en node, g(n) og f(n) sammen
+    // så køen kan sortere efter f(n) = g(n) + h(n)
+    // Vi kan ikke bare have dist som attribut på WeightedNode fordi der kunne være
+    // flere algoritmer der kørte samtidig med forskellige startnoder
+    // og dermed forskellige distancer til den samme node
     private static class NodeWithDist implements Comparable<NodeWithDist> {
         WeightedNode node;
-        int dist;
+        int gCost;  // afstand fra start
+        int fCost;  // g(n) + h(n)
 
-        public NodeWithDist(WeightedNode node, int dist) {
+        public NodeWithDist(WeightedNode node, int gCost, int hCost) {
             this.node = node;
-            this.dist = dist;
+            this.gCost = gCost;
+            this.fCost = gCost + hCost;
         }
 
         @Override
         public int compareTo(NodeWithDist other) {
-            return Integer.compare(this.dist, other.dist);
+            return Integer.compare(this.fCost, other.fCost);
         }
     }
 }
