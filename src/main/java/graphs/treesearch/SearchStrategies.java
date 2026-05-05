@@ -1,7 +1,5 @@
-package algorithms.treesearch;
+package graphs.treesearch;
 
-
-import java.util.*;
 
 public class SearchStrategies {
 
@@ -9,13 +7,14 @@ public class SearchStrategies {
 
         Node root = new Node(10); // root
         Node newChild = root.addChild(5); // root first child
-        root.addChild(7); // root second child
-        root.addChild(15); // root third child
         Node newChildChild = newChild.addChild(115); // root first child -> child
-        Node newChildChildChild = newChildChild.addChild(207); // root first child -> child -> child
-        Node newChildChildChildChild = newChildChild.addChild(500);
+        newChildChild.addChild(207); // root first child -> child -> child
+        newChildChild.addChild(500);
+        root.addChild(7); // root second child
+        newChild = root.addChild(15); // root third child
+        newChild.addChild(117);
 
-        Node foundNode = searchBFS(500, root); // BFS search
+        Node foundNode = searchBFS(117, root); // BFS search
         System.out.println("BFS starting..");
         if (foundNode != null) {
             System.out.println(foundNode.getValue());
@@ -23,7 +22,7 @@ public class SearchStrategies {
             System.out.println("Found nothing!");
         }
 
-        foundNode = searchDFS(500, root); // BFS search
+        foundNode = searchDFS(117, root); // BFS search
         System.out.println("DFS starting..");
         if (foundNode != null) {
             System.out.println(foundNode.getValue());

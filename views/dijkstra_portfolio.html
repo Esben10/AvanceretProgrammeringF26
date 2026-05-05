@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>Dijkstra – Danske byer</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: #eef2ff;
+            color: #111;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 28px;
+        }
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 6px;
+            color: #1133cc;
+            letter-spacing: 4px;
+        }
+        p.sub { font-size: 0.85rem; color: #556; margin-bottom: 20px; }
+
+        canvas {
+            border-radius: 14px;
+            background: #ffffff;
+            display: block;
+            border: 2px solid #b0bfff;
+            box-shadow: 0 4px 28px #0022aa28;
+        }
+
+        #controls {
+            margin-top: 18px;
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+        button {
+            background: #1133cc;
+            border: none;
+            color: #fff;
+            padding: 11px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+        button:hover:not(:disabled) { background: #2244ee; }
+        button#btn-reset { background: #556; }
+        button#btn-reset:hover:not(:disabled) { background: #778; }
+        button:disabled { opacity: 0.35; cursor: default; }
+        #step-counter { font-size: 0.9rem; color: #778; min-width: 105px; }
+
+        .legend {
+            margin-top: 14px;
+            display: flex;
+            gap: 22px;
+            font-size: 0.8rem;
+            color: #334;
+        }
+        .dot {
+            display: inline-block;
+            width: 13px; height: 13px;
+            border-radius: 50%;
+            margin-right: 5px;
+            vertical-align: middle;
+            border: 1.5px solid #0003;
+        }
+
+        #log {
+            margin-top: 18px;
+            width: 1200px;
+            max-height: 190px;
+            overflow-y: auto;
+            background: #fff;
+            border-radius: 10px;
+            padding: 13px 18px;
+            font-size: 0.82rem;
+            line-height: 1.9;
+            border: 2px solid #b0bfff;
+            box-shadow: 0 2px 10px #0022aa11;
+        }
+        .log-visit  { color: #006622; font-weight: bold; }
+        .log-update { color: #1133cc; }
+        .log-done   { color: #bb4400; font-weight: bold; }
+        .log-dim    { color: #aab; }
+
+        /* Legend note below log */
+        #note {
+            margin-top: 8px;
+            font-size: 0.75rem;
+            color: #778;
+        }
+    </style>
+</head>
+<body>
+
+<h1>DIJKSTRA – DANSKE BYER</h1>
+<p class="sub">Korteste vej fra Esbjerg til Aalborg &mdash; tryk "Næste step" for at følge algoritmen trin for trin</p>
+
+<canvas id="c" width="1200" height="640"></canvas>
+
+<div id="controls">
+    <button id="btn-next">Næste step →</button>
+    <button id="btn-reset">↺ Reset</button>
+    <span id="step-counter">Step 0 / ?</span>
+</div>
+
+<div class="legend">
+    <span><span class="dot" style="background:#00cc55"></span>Start (Esbjerg)</span>
+    <span><span class="dot" style="background:#ee2200"></span>Mål (Aalborg)</span>
+    <span><span class="dot" style="background:#ffcc00"></span>Besøger nu</span>
+    <span><span class="dot" style="background:#77ddaa"></span>Besøgt (låst fast)</span>
+    <span><span class="dot" style="background:#88aaff"></span>I prioritetskø</span>
+    <span><span class="dot" style="background:#ff8800"></span>Korteste vej</span>
+</div>
+
+<div id="log"><span class="log-dim">Tryk "Næste step" for at starte algoritmen...</span></div>
+<div id="note">Tal på kanten = km på den konkrete vej &nbsp;|&nbsp; Tal under by (blåt) = samlet afstand fra Esbjerg</div>
+
+<script>
+const canvas  = document.getElementById('c');
+const ctx     = canvas.getContext('2d');
+const logEl   = document.getElementById('log');
+const btnNext = document.getElementById('btn-next');
+const counter = document.getElementById('step-counter');
+
+const W = 1200, H = 640;
+const R = 28;   // node radius
+
+const SOURCE = 'Esbjerg';
+const DEST   = 'Aalborg';
+
+/*
+  Layout designed so the two paths to Aalborg are clearly separate:
+    Left branch:  Vejle → Horsens → Randers → Aalborg
+    Right branch: Vejle → Aarhus  → Aalborg
+  Cross-links (Horsens→Aarhus, Aarhus→Randers) are visible in the middle.
+  Esbjerg and Odense sit at the bottom so their long connecting edge
+  runs horizontally below all Jutland cities without crossing anything.
+*/
+const nodes = {
+    'Esbjerg':    { x: 70,   y: 555, label: 'Esb' },
+    'Kolding':    { x: 265,  y: 518, label: 'Kol' },
+    'Fredericia': { x: 455,  y: 490, label: 'Fre' },
+    'Odense':     { x: 590,  y: 568, label: 'Ode' },
+    'Vejle':      { x: 400,  y: 368, label: 'Vej' },
+    'Horsens':    { x: 252,  y: 268, label: 'Hor' },  // left branch
+    'Aarhus':     { x: 568,  y: 295, label: 'Aar' },  // right branch — in the middle vertically
+    'Randers':    { x: 312,  y: 178, label: 'Ran' },  // left branch, upper-middle
+    'Aalborg':    { x: 458,  y: 78,  label: 'Aal' },  // where both branches meet
+    'København':  { x: 1050, y: 488, label: 'Kbh' },
+};
+
+const edges = [
+    ['Esbjerg',    'Kolding',    73],
+    ['Esbjerg',    'Odense',    144],
+    ['Kolding',    'Fredericia', 24],
+    ['Kolding',    'Vejle',      47],
+    ['Odense',     'Fredericia', 50],
+    ['Odense',     'København', 167],
+    ['Fredericia', 'Vejle',      21],
+    ['Vejle',      'Horsens',    36],
+    ['Vejle',      'Aarhus',     97],
+    ['Horsens',    'Aarhus',     73],
+    ['Horsens',    'Randers',    62],
+    ['Aarhus',     'Randers',    57],
+    ['Aarhus',     'Aalborg',   119],
+    ['Randers',    'Aalborg',    98],
+    ['København',  'Odense',    167],
+];
+
+const adj = {};
+for (const k of Object.keys(nodes)) adj[k] = [];
+for (const [a, b, w] of edges) adj[a].push([b, w]);
+
+let state = {}, steps = [], stepIdx = 0, path = [], currentNode = null;
+
+function resetState() {
+    for (const k of Object.keys(nodes))
+        state[k] = { dist: Infinity, visited: false, inQueue: false };
+    currentNode = null;
+    path = [];
+}
+
+function buildSteps() {
+    const dist = {}, prev = {}, visited = new Set();
+    for (const k of Object.keys(nodes)) dist[k] = Infinity;
+    dist[SOURCE] = 0;
+
+    const queue = [[SOURCE, 0]];
+    steps = [{ type: 'init', node: SOURCE }];
+
+    while (queue.length > 0) {
+        queue.sort((a, b) => a[1] - b[1]);
+        const [cur, curDist] = queue.shift();
+        if (visited.has(cur)) continue;
+        visited.add(cur);
+        steps.push({ type: 'visit', node: cur, dist: curDist });
+        if (cur === DEST) break;
+        for (const [nb, w] of adj[cur]) {
+            if (visited.has(nb)) continue;
+            const nd = curDist + w;
+            if (nd < dist[nb]) {
+                const prevDist = dist[nb];
+                dist[nb] = nd; prev[nb] = cur;
+                queue.push([nb, nd]);
+                steps.push({ type: 'update', node: nb, dist: nd, from: cur, edgeWeight: w, fromDist: curDist, prevDist });
+            }
+        }
+    }
+
+    let cur = DEST; path = [];
+    while (cur) { path.unshift(cur); cur = prev[cur]; }
+    steps.push({ type: 'done', path });
+    counter.textContent = `Step 0 / ${steps.length}`;
+}
+
+// Opaque white pill behind any text so it's always readable over edges
+function pill(x, y, text, font) {
+    ctx.save();
+    ctx.font = font;
+    const tw = ctx.measureText(text).width;
+    ctx.fillStyle = '#fffffffa';
+    ctx.beginPath();
+    ctx.roundRect(x - tw / 2 - 5, y - 13, tw + 10, 17, 5);
+    ctx.fill();
+    ctx.restore();
+}
+
+function draw() {
+    ctx.clearRect(0, 0, W, H);
+    const isDone = stepIdx > 0 && steps[stepIdx - 1]?.type === 'done';
+
+    // ── Edges ──────────────────────────────────────────────────────────────
+    for (const [a, b, w] of edges) {
+        const na = nodes[a], nb = nodes[b];
+        const onPath = isDone
+            && path.includes(a) && path.includes(b)
+            && Math.abs(path.indexOf(a) - path.indexOf(b)) === 1;
+
+        // Edge line
+        ctx.beginPath();
+        ctx.moveTo(na.x, na.y);
+        ctx.lineTo(nb.x, nb.y);
+        ctx.strokeStyle = onPath ? '#ff8800' : '#aabbee';
+        ctx.lineWidth   = onPath ? 5 : 2;
+        ctx.stroke();
+
+        // Arrowhead at 62% along the edge
+        const angle = Math.atan2(nb.y - na.y, nb.x - na.x);
+        const t = 0.62;
+        const ax = na.x + (nb.x - na.x) * t;
+        const ay = na.y + (nb.y - na.y) * t;
+        ctx.fillStyle = onPath ? '#ff8800' : '#7799cc';
+        ctx.beginPath();
+        ctx.moveTo(ax + Math.cos(angle) * 10, ay + Math.sin(angle) * 10);
+        ctx.lineTo(ax + Math.cos(angle - 2.4) * 7, ay + Math.sin(angle - 2.4) * 7);
+        ctx.lineTo(ax + Math.cos(angle + 2.4) * 7, ay + Math.sin(angle + 2.4) * 7);
+        ctx.fill();
+
+        // Weight label at 40% from source with perpendicular offset
+        const lx = na.x + (nb.x - na.x) * 0.40;
+        const ly = na.y + (nb.y - na.y) * 0.40;
+        const perpX = Math.cos(angle - Math.PI / 2) * 22;
+        const perpY = Math.sin(angle - Math.PI / 2) * 22;
+        const label = w + ' km';
+        const font  = 'bold 13px Courier New';
+        pill(lx + perpX, ly + perpY, label, font);
+        ctx.fillStyle    = onPath ? '#cc5500' : '#224499';
+        ctx.font         = font;
+        ctx.textAlign    = 'center';
+        ctx.textBaseline = 'alphabetic';
+        ctx.fillText(label, lx + perpX, ly + perpY);
+    }
+
+    // ── Nodes ──────────────────────────────────────────────────────────────
+    for (const [k, n] of Object.entries(nodes)) {
+        const s = state[k];
+        let fill = '#dde4ff', stroke = '#8899cc', textCol = '#334488';
+
+        if      (k === SOURCE)  { fill = '#00cc55'; stroke = '#007733'; textCol = '#fff'; }
+        else if (k === DEST)    { fill = '#ee2200'; stroke = '#991100'; textCol = '#fff'; }
+        else if (s.visited)     { fill = '#77ddaa'; stroke = '#009944'; textCol = '#003322'; }
+        else if (s.inQueue)     { fill = '#aabeff'; stroke = '#2244cc'; textCol = '#001188'; }
+
+        if (k === currentNode && !isDone) {
+            fill = '#ffee44'; stroke = '#cc9900'; textCol = '#443300';
+        }
+        if (isDone && path.includes(k)) {
+            fill    = k === SOURCE ? '#00cc55' : k === DEST ? '#ee2200' : '#ffd080';
+            stroke  = '#ff8800';
+            textCol = k === SOURCE ? '#fff'    : k === DEST ? '#fff'    : '#553300';
+        }
+
+        // Glow ring on current node
+        if (k === currentNode && !isDone) {
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, R + 9, 0, Math.PI * 2);
+            ctx.strokeStyle = '#ffcc0055';
+            ctx.lineWidth = 8;
+            ctx.stroke();
+        }
+
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, R, 0, Math.PI * 2);
+        ctx.fillStyle = fill;
+        ctx.fill();
+        ctx.strokeStyle = stroke;
+        ctx.lineWidth = 2.5;
+        ctx.stroke();
+
+        // Abbreviation inside circle
+        ctx.fillStyle    = textCol;
+        ctx.font         = 'bold 14px Courier New';
+        ctx.textAlign    = 'center';
+        ctx.textBaseline = 'middle';
+        ctx.fillText(n.label, n.x, n.y);
+
+        // Full city name below circle
+        const nameY = n.y + R + 18;
+        const nameFont = '12px Courier New';
+        pill(n.x, nameY, k, nameFont);
+        ctx.fillStyle    = '#111';
+        ctx.font         = nameFont;
+        ctx.textBaseline = 'alphabetic';
+        ctx.fillText(k, n.x, nameY);
+
+        // Cumulative distance from source — blue, clearly separate from edge km labels
+        if (s && s.dist !== Infinity) {
+            const dLabel = s.dist + ' km';
+            const dFont  = 'bold 12px Courier New';
+            const dY     = nameY + 17;
+            pill(n.x, dY, dLabel, dFont);
+            ctx.fillStyle = '#1133cc';
+            ctx.font      = dFont;
+            ctx.fillText(dLabel, n.x, dY);
+        }
+    }
+}
+
+function addLog(msg, cls) {
+    const el = document.createElement('div');
+    if (cls) el.className = cls;
+    el.textContent = msg;
+    logEl.appendChild(el);
+    logEl.scrollTop = logEl.scrollHeight;
+}
+
+function applyStep(s) {
+    if (s.type === 'init') {
+        state[SOURCE].dist = 0;
+        state[SOURCE].inQueue = true;
+        currentNode = SOURCE;
+        addLog(`Start: ${SOURCE} er startbyen. Afstand fra ${SOURCE} til sig selv er 0 km — den sættes i prioritetskøen.`);
+
+    } else if (s.type === 'visit') {
+        currentNode = s.node;
+        state[s.node].visited = true;
+        state[s.node].inQueue = false;
+        let msg;
+        if (s.node === SOURCE)
+            msg = `✓ Besøger ${s.node} (0 km) — startbyen. Vi undersøger dens naboer.`;
+        else if (s.node === DEST)
+            msg = `✓ Besøger ${s.node} (${s.dist} km) — det er målet! Afstanden er låst fast. Algoritmen er færdig.`;
+        else
+            msg = `✓ Besøger ${s.node} (${s.dist} km fra start) — den havde den laveste afstand i køen. Afstanden låses fast, vi vender ikke tilbage.`;
+        addLog(msg, 'log-visit');
+
+    } else if (s.type === 'update') {
+        state[s.node].dist = s.dist;
+        state[s.node].inQueue = true;
+        const msg = s.prevDist === Infinity
+            ? `  → ${s.from} (${s.fromDist} km) + vej til ${s.node} (${s.edgeWeight} km) = ${s.dist} km. ${s.node} er ikke set før — sættes i køen.`
+            : `  → ${s.from} (${s.fromDist} km) + vej til ${s.node} (${s.edgeWeight} km) = ${s.dist} km. Bedre end kendte ${s.prevDist} km — opdaterer og sætter ${s.node} i køen igen.`;
+        addLog(msg, 'log-update');
+
+    } else if (s.type === 'done') {
+        currentNode = null;
+        addLog(`★ Korteste vej fundet: ${s.path.join(' → ')} — ${state[DEST].dist} km i alt.`, 'log-done');
+        btnNext.disabled = true;
+    }
+}
+
+btnNext.addEventListener('click', () => {
+    if (stepIdx >= steps.length) return;
+    applyStep(steps[stepIdx++]);
+    counter.textContent = `Step ${stepIdx} / ${steps.length}`;
+    draw();
+});
+
+document.getElementById('btn-reset').addEventListener('click', () => {
+    stepIdx = 0;
+    logEl.innerHTML = '<span class="log-dim">Tryk "Næste step" for at starte algoritmen...</span>';
+    btnNext.disabled = false;
+    resetState();
+    buildSteps();
+    draw();
+});
+
+resetState();
+buildSteps();
+draw();
+</script>
+</body>
+</html>

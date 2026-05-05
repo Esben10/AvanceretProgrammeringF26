@@ -1,4 +1,4 @@
-package algorithms.treesearch;
+package graphs.treesearch;
 
 
 

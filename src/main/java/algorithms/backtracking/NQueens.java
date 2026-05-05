@@ -37,7 +37,7 @@ public class NQueens {
         // Tjek kolonne og diagonaler (ikke rækker, da vi tager det række for række)
         // Vi behøver kun tjekke kolonner og diagonaler over denne række (i < row) da vi arbejder os nedad
         for (int i = 0; i < row; i++) {
-            // Kolonnen
+            // Kolonnen opad
             if (board[i][col] == 'Q') return false;
             // Venstre diagonal opad
             if (col - (row - i) >= 0 && board[i][col - (row - i)] == 'Q') return false;

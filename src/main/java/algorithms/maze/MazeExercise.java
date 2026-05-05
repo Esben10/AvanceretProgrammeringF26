@@ -1,13 +1,15 @@
 package algorithms.maze;
 
 public class MazeExercise {
-    static final int N = 4;
+    static final int N = 6;
 
     static int[][] maze = {
-            {1, 0, 1, 1},
-            {1, 1, 1, 0},
-            {0, 0, 1, 1},
-            {1, 1, 0, 1}
+            {1, 0, 1, 1, 1, 0},
+            {1, 1, 1, 0, 1, 0},
+            {0, 0, 1, 0, 1, 1},
+            {0, 1, 1, 1, 0, 1},
+            {0, 1, 0, 0, 0, 1},
+            {0, 1, 1, 1, 1, 1}
     };
 
     static int[][] path = new int[N][N];

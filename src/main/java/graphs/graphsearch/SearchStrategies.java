@@ -1,4 +1,4 @@
-package algorithms.graphsearch;
+package graphs.graphsearch;
 
 import java.util.*;
 
@@ -16,6 +16,8 @@ public class SearchStrategies {
         A.addNeighbor(C);
         A.addNeighbor(D);
         C.addNeighbor(E);
+        // Hvad sker der hvis vi lader E have A som nabo?
+        E.addNeighbor(A);
 
         System.out.println("BFS starting...");
         Node foundBFS = searchBFS("F", A);

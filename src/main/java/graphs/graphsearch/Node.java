@@ -1,4 +1,4 @@
-package algorithms.undirectedgraphs;
+package graphs.graphsearch;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,20 +13,17 @@ public class Node {
     }
 
     public String getName() {
+
         return name;
     }
 
     public List<Node> getNeighbors() {
+
         return neighbors;
     }
 
     public void addNeighbor(Node neighbor) {
-        neighbors.add(neighbor);
-    }
 
-    // NY metode til urettede grafer:
-    public void addUndirectedNeighbor(Node other) {
-        this.neighbors.add(other);
-        other.neighbors.add(this);
+        neighbors.add(neighbor);
     }
 }

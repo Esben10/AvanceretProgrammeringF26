@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <title>Dijkstra visualisering</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            background: #1a1a2e;
+            color: #eee;
+            font-family: 'Courier New', monospace;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        h1 { font-size: 1.4rem; margin-bottom: 6px; color: #a0c4ff; letter-spacing: 2px; }
+        p.sub { font-size: 0.75rem; color: #666; margin-bottom: 16px; }
+
+        #canvas-wrap { position: relative; }
+        canvas { border-radius: 12px; background: #0f0f1e; display: block; }
+
+        #controls {
+            margin-top: 14px;
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+        button {
+            background: #a0c4ff22;
+            border: 1px solid #a0c4ff55;
+            color: #a0c4ff;
+            padding: 8px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: monospace;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+        }
+        button:hover { background: #a0c4ff44; }
+
+        #log {
+            margin-top: 16px;
+            width: 620px;
+            max-height: 160px;
+            overflow-y: auto;
+            background: #0f0f1e;
+            border-radius: 8px;
+            padding: 10px 14px;
+            font-size: 0.75rem;
+            line-height: 1.7;
+            border: 1px solid #a0c4ff22;
+        }
+        .log-entry { color: #88c; }
+        .log-entry.visited { color: #5de095; }
+        .log-entry.found { color: #ffd166; font-weight: bold; }
+
+        #speed-wrap { font-size: 0.75rem; color: #666; display: flex; align-items: center; gap: 8px; }
+        input[type=range] { accent-color: #a0c4ff; }
+    </style>
+</head>
+<body>
+<h1>DIJKSTRA</h1>
+<p class="sub">Korteste vej fra S til M — graf fra undervisningen</p>
+
+<div id="canvas-wrap">
+    <canvas id="c" width="620" height="380"></canvas>
+</div>
+
+<div id="controls">
+    <button id="btn">▶ Start</button>
+    <button id="reset">↺ Reset</button>
+    <div id="speed-wrap">
+        Hastighed: <input type="range" id="speed" min="1" max="10" value="4">
+    </div>
+</div>
+
+<div id="log"><span style="color:#444">Tryk Start for at begynde...</span></div>
+
+<script>
+    const canvas = document.getElementById('c');
+    const ctx = canvas.getContext('2d');
+    const log = document.getElementById('log');
+
+    // Graf defineret med positioner til canvas
+    const nodes = {
+        S: { x: 50,  y: 190, dist: Infinity, prev: null, visited: false, inQueue: false },
+        A: { x: 160, y: 80,  dist: Infinity, prev: null, visited: false, inQueue: false },
+        B: { x: 160, y: 180, dist: Infinity, prev: null, visited: false, inQueue: false },
+        C: { x: 160, y: 300, dist: Infinity, prev: null, visited: false, inQueue: false },
+        D: { x: 280, y: 80,  dist: Infinity, prev: null, visited: false, inQueue: false },
+        E: { x: 280, y: 190, dist: Infinity, prev: null, visited: false, inQueue: false },
+        F: { x: 280, y: 300, dist: Infinity, prev: null, visited: false, inQueue: false },
+        G: { x: 390, y: 100, dist: Infinity, prev: null, visited: false, inQueue: false },
+        H: { x: 390, y: 220, dist: Infinity, prev: null, visited: false, inQueue: false },
+        I: { x: 390, y: 300, dist: Infinity, prev: null, visited: false, inQueue: false },
+        J: { x: 500, y: 140, dist: Infinity, prev: null, visited: false, inQueue: false },
+        K: { x: 500, y: 260, dist: Infinity, prev: null, visited: false, inQueue: false },
+        L: { x: 500, y: 360, dist: Infinity, prev: null, visited: false, inQueue: false },
+        M: { x: 590, y: 200, dist: Infinity, prev: null, visited: false, inQueue: false },
+    };
+
+    const edges = [
+        ['S','A',1],['S','B',3],['S','C',2],
+        ['A','D',2],['B','D',5],['B','E',4],
+        ['C','E',1],['C','F',3],['D','G',3],
+        ['E','G',6],['E','H',3],['F','I',2],
+        ['G','H',1],['G','J',7],['H','J',2],
+        ['H','K',5],['I','K',3],['I','L',4],
+        ['J','M',3],['K','M',4],['L','M',8],
+    ];
+
+    // Build adjacency
+    const adj = {};
+    for (const k of Object.keys(nodes)) adj[k] = [];
+    for (const [a,b,w] of edges) adj[a].push([b,w]);
+
+    let steps = [];
+    let stepIdx = 0;
+    let animTimer = null;
+    let running = false;
+    let path = [];
+
+    function buildSteps() {
+        // Reset
+        for (const k of Object.keys(nodes)) {
+            nodes[k].dist = Infinity;
+            nodes[k].prev = null;
+            nodes[k].visited = false;
+            nodes[k].inQueue = false;
+        }
+        steps = [];
+        path = [];
+
+        const dist = {};
+        const prev = {};
+        const visited = new Set();
+        for (const k of Object.keys(nodes)) dist[k] = Infinity;
+        dist['S'] = 0;
+
+        // Simple priority queue
+        const queue = [['S', 0]];
+
+        steps.push({ type: 'init', node: 'S', dist: 0 });
+
+        while (queue.length > 0) {
+            queue.sort((a,b) => a[1]-b[1]);
+            const [cur, curDist] = queue.shift();
+            if (visited.has(cur)) continue;
+            visited.add(cur);
+            steps.push({ type: 'visit', node: cur, dist: curDist });
+            if (cur === 'M') break;
+            for (const [nb, w] of adj[cur]) {
+                if (visited.has(nb)) continue;
+                const nd = curDist + w;
+                if (nd < dist[nb]) {
+                    dist[nb] = nd;
+                    prev[nb] = cur;
+                    queue.push([nb, nd]);
+                    steps.push({ type: 'update', node: nb, dist: nd, from: cur });
+                }
+            }
+        }
+
+        // Reconstruct path
+        let cur = 'M';
+        while (cur) { path.unshift(cur); cur = prev[cur]; }
+        steps.push({ type: 'done', path });
+    }
+
+    function draw() {
+        ctx.clearRect(0,0,620,380);
+
+        // Edges
+        for (const [a,b,w] of edges) {
+            const na = nodes[a], nb = nodes[b];
+            const onPath = steps[stepIdx-1]?.type === 'done' && path.length > 1 &&
+                path.includes(a) && path.includes(b) &&
+                Math.abs(path.indexOf(a) - path.indexOf(b)) === 1;
+
+            ctx.beginPath();
+            ctx.moveTo(na.x, na.y);
+            ctx.lineTo(nb.x, nb.y);
+            ctx.strokeStyle = onPath ? '#ffd16688' : '#ffffff18';
+            ctx.lineWidth = onPath ? 3 : 1.5;
+            ctx.stroke();
+
+            // Arrow
+            const angle = Math.atan2(nb.y-na.y, nb.x-na.x);
+            const mx = (na.x+nb.x)/2, my = (na.y+nb.y)/2;
+            ctx.fillStyle = '#ffffff33';
+            ctx.beginPath();
+            ctx.moveTo(mx + Math.cos(angle)*6, my + Math.sin(angle)*6);
+            ctx.lineTo(mx + Math.cos(angle-2.4)*5, my + Math.sin(angle-2.4)*5);
+            ctx.lineTo(mx + Math.cos(angle+2.4)*5, my + Math.sin(angle+2.4)*5);
+            ctx.fill();
+
+            // Weight label
+            ctx.fillStyle = '#ffffff55';
+            ctx.font = '11px Courier New';
+            ctx.fillText(w, mx+4, my-4);
+        }
+
+        // Nodes
+        for (const [k, n] of Object.entries(nodes)) {
+            let fill = '#1a1a3e';
+            let stroke = '#ffffff33';
+            let textCol = '#aaa';
+
+            if (k === 'S') { fill = '#1D9E75'; stroke = '#1D9E75'; textCol = '#fff'; }
+            else if (k === 'M') { fill = '#D85A30'; stroke = '#D85A30'; textCol = '#fff'; }
+            else if (n.visited) { fill = '#5de09533'; stroke = '#5de095'; textCol = '#5de095'; }
+            else if (n.inQueue) { fill = '#a0c4ff22'; stroke = '#a0c4ff'; textCol = '#a0c4ff'; }
+
+            if (steps[stepIdx-1]?.type === 'done' && path.length > 1 && path.includes(k)) {
+                stroke = '#ffd166';
+                fill = k === 'S' ? '#1D9E75' : k === 'M' ? '#D85A30' : '#ffd16622';
+                textCol = '#ffd166';
+            }
+
+            ctx.beginPath();
+            ctx.arc(n.x, n.y, 18, 0, Math.PI*2);
+            ctx.fillStyle = fill;
+            ctx.fill();
+            ctx.strokeStyle = stroke;
+            ctx.lineWidth = 2;
+            ctx.stroke();
+
+            ctx.fillStyle = textCol;
+            ctx.font = 'bold 13px Courier New';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText(k, n.x, n.y);
+
+            // Dist label
+            if (n.dist !== Infinity) {
+                ctx.fillStyle = '#ffffff88';
+                ctx.font = '10px Courier New';
+                ctx.fillText(n.dist, n.x, n.y + 28);
+            }
+        }
+    }
+
+    function addLog(msg, cls='log-entry') {
+        const el = document.createElement('div');
+        el.className = cls;
+        el.textContent = msg;
+        log.appendChild(el);
+        log.scrollTop = log.scrollHeight;
+    }
+
+    function applyStep(s) {
+        if (s.type === 'init') {
+            nodes['S'].dist = 0;
+            nodes['S'].inQueue = true;
+            addLog(`Start: S sættes i køen med dist 0`);
+        } else if (s.type === 'visit') {
+            nodes[s.node].visited = true;
+            nodes[s.node].inQueue = false;
+            addLog(`✓ Besøger ${s.node} (dist=${s.dist}) — låst fast`, 'log-entry visited');
+        } else if (s.type === 'update') {
+            nodes[s.node].dist = s.dist;
+            nodes[s.node].prev = s.from;
+            nodes[s.node].inQueue = true;
+            addLog(`  → Opdaterer ${s.node}: dist=${s.dist} via ${s.from}`);
+        } else if (s.type === 'done') {
+            addLog(`★ Korteste vej: ${s.path.join(' → ')}`, 'log-entry found');
+        }
+    }
+
+    function runNext() {
+        if (stepIdx >= steps.length) {
+            running = false;
+            document.getElementById('btn').textContent = '✓ Færdig';
+            return;
+        }
+        applyStep(steps[stepIdx]);
+        if (steps[stepIdx].type === 'done') path = steps[stepIdx].path;
+        stepIdx++;
+        draw();
+        const delay = 1100 - document.getElementById('speed').value * 100;
+        animTimer = setTimeout(runNext, delay);
+    }
+
+    document.getElementById('btn').addEventListener('click', () => {
+        if (!running) {
+            running = true;
+            document.getElementById('btn').textContent = '⏸ Kører...';
+            runNext();
+        }
+    });
+
+    document.getElementById('reset').addEventListener('click', () => {
+        clearTimeout(animTimer);
+        running = false;
+        stepIdx = 0;
+        path = [];
+        log.innerHTML = '<span style="color:#444">Tryk Start for at begynde...</span>';
+        document.getElementById('btn').textContent = '▶ Start';
+        buildSteps();
+        for (const k of Object.keys(nodes)) {
+            nodes[k].dist = Infinity;
+            nodes[k].visited = false;
+            nodes[k].inQueue = false;
+        }
+        draw();
+    });
+
+    buildSteps();
+    draw();
+</script>
+</body>
+</html>
